@@ -2,9 +2,8 @@
 
 [![badge][badge]][npm-repo]
 
-Recommended base [ESLint] configuration intended to use at Maark's JavaScript
-projects. It extends from [Airbnb] base configuration and uses [Prettier] to
-format the code.
+Maark's recommended base [ESLint] configuration projects. It extends from
+[Airbnb] base configuration and uses [Prettier] to format the code.
 
 ## Usage
 
@@ -36,9 +35,13 @@ module.exports = prettierConfig
 
 ## More specific configurations
 
-The intent here was to build the most basic set of rules for any JavaScript project but not all projects use the same stack, and it is also important to define rules to be able to identify anti-patterns and code-smells for specific known libraries.
+The intent here was to build the most basic set of rules for any JavaScript
+project but not all projects use the same stack, and it is also important to
+define rules to be able to identify anti-patterns and code-smells for specific
+known libraries.
 
-The idea is to create a structure of configurations that extend from each other. Something like [this diagram][diagram]:
+The idea is to create a structure of configurations that extend from each
+other. Something like [this diagram][diagram]:
 
 ```mermaid
 graph TD
