@@ -1,0 +1,22 @@
+{
+  "name": "@maarkllc/eslint-config-default",
+  "version": "1.0.0",
+  "description": "Maark's default eslint configuration for front end development",
+  "main": "index.js",
+  "author": "Maark, LLC",
+  "license": "ISC",
+  "scripts": {
+    "test": "eslint '**/*.js'"
+  },
+  "peerDependencies": {
+    "eslint": "^8.18.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "prettier": "^2.7.1"
+  },
+  "engines": {
+    "node": ">=16",
+    "npm": ">=7"
+  }
+}
