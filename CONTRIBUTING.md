@@ -43,42 +43,45 @@ Type of branches depending on the task at hand:
 All branches except `main` are temporary and should be deleted after they're
 merged. There's no need for extra permanent branches like `develop`.
 
-If you don't see the diagram below open it in [Mermaid's live editor][diagram].
+If there's no diagram below, open it in [Mermaid's live editor][diagram].
 
 ```mermaid
-%%{init: {'theme':'base', 'gitGraph': {'rotateCommitLabel': true} }}%%
+%%{init: {'theme':'base'} }%%
 gitGraph
   commit id: "Initial commit"
   branch feature/1
   checkout feature/1
-  commit
-  commit
+  commit id: "1"
+  commit id: "2"
   checkout main
   branch feature/2
   checkout feature/2
-  commit
+  commit id: "3"
   checkout main
   branch bugfix/1
   checkout bugfix/1
-  commit
-  commit
+  commit id: "4"
+  commit id: "5"
   checkout main
   merge feature/1
   merge bugfix/1
   branch release/v1.0.0
   checkout release/v1.0.0
-  commit id: "Update CHANGELOG"
-  commit id: "Bump version 1.0.0" type: HIGHLIGHT tag: "v1.0.0"
+  commit id: "6"
+  checkout feature/2
+  commit id: "7"
+  checkout release/v1.0.0
+  commit id: "8" type: HIGHLIGHT tag: "v1.0.0"
   checkout main
   merge release/v1.0.0
   checkout release/v1.0.0 # it should be checkout v1.0.0 but mermaid does not support it
   branch hotfix
-  commit
-  commit id: "Bump version 1.0.1" type: HIGHLIGHT tag: "v1.0.1"
+  commit id: "9"
+  commit id: "10" type: HIGHLIGHT tag: "v1.0.1"
   checkout main
   merge hotfix
   checkout feature/2
   commit id: "Spill over"
 ```
 
-[diagram]: https://mermaid.live/edit#pako:eNqNk0tvgkAUhf_Kze3WqLhk14dBE9MubHdsBrjCpMwjw4ypMf73DjKmYKi6ICF3Ps655wBHzFVBGGPJbWKYrlIJkCshuAVexJDiWnLLWR2GKbZAZpjMK9gRs87QLDo_VFH-rZy9mnZPDe8upGBcjsgtRuUWj4lkrtzxn6uVBsNHNhJkShom6UZ9peBoqCbW0GwfTefT-UBu5Khf7ZcumCV4XT2_J8vNR9KVO0BenNCwJ9NwJaFTQbAHTTGs1slq469PsKxs2eCCNxI9vCs8gd-hqZSrC8joDwvHWStNxqsXUChqQCqPO62V8avbXj2Vsr6xseb_ixjdiRjdjNjzu_EJBe-t5nUNyruniBMMifzvcGzRFG1FglJs0cyX0xqfPOfOL25ZcKsMxjtWNzRB5qzaHmSOsTWOLtAbZ6VhIlCnXyJdKJI
+[diagram]: https://mermaid.live/edit#pako:eNqNU8tuwjAQ_BVre0VA6DvXtgIkbvToi5MsidXEjpw1KkL8ex0wbRIC6SGX2dmZnYm8h1gnCCGkkuZGlBlXjMW6KCQxmYSMw1JJkiL3IIeaEBmh4oxtUJA1OAmOSxnGX9pSB21KBaftFjbz2Hm7EFL1WMx6LWYXcve35SKbbuR35-AW2BR76Ln38YpBgSbFdvYT1FT3VxjMUVQ42Qbj6XjakusZNd2fOu7Xi3juMAeEXzgw2pUYssVyvli575ORSOuR37gV-9-B2B1zllWmbZ6wCP9ofhzV0micesISjRVT2tFtWWrjLqVGh5kmV-tFjteeXxZMB8IFN8M1nIZrX5cyz5neouEAI_BZ3Pva11QOlGGBHGpq5GrhMDrhv8_PjfYcjCZB-HZUXokI8xrfiLzCA1cHJ2zLxBE-EknaQHicjEBY0uudiiEkY_FMepciNaLwrMMPN2JPUQ
