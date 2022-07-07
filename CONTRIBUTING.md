@@ -46,7 +46,7 @@ merged. There's no need for extra permanent branches like `develop`.
 If you don't see the diagram below open it in [Mermaid's live editor][diagram].
 
 ```mermaid
-%%{init: {'theme':'base'}}%%
+%%{init: {'theme':'base', 'gitGraph': {'rotateCommitLabel': true} }}%%
 gitGraph
   commit id: "Initial commit"
   branch feature/1
