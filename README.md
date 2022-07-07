@@ -44,6 +44,7 @@ The idea is to create a structure of configurations that extend from each
 other. Something like [this diagram][diagram]:
 
 ```mermaid
+%%{init: {'theme':'base'}}%%
 graph TD
     A[eslint-config-default] --> B[eslint-config-react]
     A --> eslint-config-vue

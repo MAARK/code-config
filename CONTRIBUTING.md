@@ -43,7 +43,10 @@ Type of branches depending on the task at hand:
 All branches except `main` are temporary and should be deleted after they're
 merged. There's no need for extra permanent branches like `develop`.
 
+If you don't see the diagram below open it in [Mermaid's live editor][diagram].
+
 ```mermaid
+%%{init: {'theme':'base'}}%%
 gitGraph
   commit id: "Initial commit"
   branch feature/1
@@ -77,3 +80,5 @@ gitGraph
   checkout feature/2
   commit id: "Spill over"
 ```
+
+[diagram]: https://mermaid.live/edit#pako:eNqNk0tvgkAUhf_Kze3WqLhk14dBE9MubHdsBrjCpMwjw4ypMf73DjKmYKi6ICF3Ps655wBHzFVBGGPJbWKYrlIJkCshuAVexJDiWnLLWR2GKbZAZpjMK9gRs87QLDo_VFH-rZy9mnZPDe8upGBcjsgtRuUWj4lkrtzxn6uVBsNHNhJkShom6UZ9peBoqCbW0GwfTefT-UBu5Khf7ZcumCV4XT2_J8vNR9KVO0BenNCwJ9NwJaFTQbAHTTGs1slq469PsKxs2eCCNxI9vCs8gd-hqZSrC8joDwvHWStNxqsXUChqQCqPO62V8avbXj2Vsr6xseb_ixjdiRjdjNjzu_EJBe-t5nUNyruniBMMifzvcGzRFG1FglJs0cyX0xqfPOfOL25ZcKsMxjtWNzRB5qzaHmSOsTWOLtAbZ6VhIlCnXyJdKJI
