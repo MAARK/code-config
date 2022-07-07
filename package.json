@@ -1,7 +1,7 @@
 {
   "name": "@maarkllc/eslint-config-default",
   "version": "1.0.0",
-  "description": "Maark's default eslint configuration for front end development",
+  "description": "Maark's default ESLint configuration for front-end development",
   "main": "index.js",
   "author": "Maark, LLC",
   "license": "ISC",
