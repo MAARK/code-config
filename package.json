@@ -1,19 +1,22 @@
 {
-  "name": "@maarkllc/eslint-config-default",
+  "name": "@maarkllc/linter",
   "version": "1.0.0",
-  "description": "Maark's default ESLint configuration for front-end development",
-  "main": "index.js",
+  "description": "Maark's recommended linter rules for code style and formatting.",
   "author": "Maark, LLC",
   "license": "ISC",
   "repository": {
     "type": "git",
-    "url": "https://github.com/MAARK/eslint-config-default"
+    "url": "https://github.com/MAARK/linter"
   },
   "bugs": {
-    "url": "https://github.com/MAARK/eslint-config-default/issues"
+    "url": "https://github.com/MAARK/linter/issues"
   },
   "scripts": {
-    "test": "eslint '**/*.js'"
+    "test": "npm run lint",
+    "lint": "concurrently npm:lint:*",
+    "fix": "concurrently npm:fix:*",
+    "lint:base": "eslint -c ./js/base/index.js './js/base/**/*.js'",
+    "fix:base": "eslint -c ./js/base/index.js './js/base/**/*.js' --fix"
   },
   "peerDependencies": {
     "eslint": "^8.18.0",
@@ -21,6 +24,9 @@
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.2.1",
     "prettier": "^2.7.1"
+  },
+  "devDependencies": {
+    "concurrently": "^7.2.2"
   },
   "engines": {
     "node": ">=16",
