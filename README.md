@@ -1,4 +1,4 @@
-# Code style and formatting guide
+# Coding standards
 
 [![badge][badge]][npm-repo]
 
@@ -9,7 +9,7 @@ Maark's recommended linter rules for code style and formatting.
 ### Install
 
 ```bash
-npm i --save-dev @maarkllc/linter
+npm i --save-dev @maarkllc/coding-standards
 ```
 
 ### Configure ESLint
@@ -19,7 +19,7 @@ configuration depending on the browser stack you are using.
 
 ```javascript
 module.exports = {
-  extends: ['@maarkllc/linter/js/base']
+  extends: ['@maarkllc/coding-standards/js/base']
 }
 ```
 
@@ -28,7 +28,7 @@ module.exports = {
 Create a `.prettierrc.js` file in your project root directory.
 
 ```javascript
-const prettierConfig = require('@maarkllc/linter/js/base/.prettierrc.js')
+const prettierConfig = require('@maarkllc/coding-standards/js/base/.prettierrc.js')
 
 module.exports = prettierConfig
 ```
@@ -57,8 +57,8 @@ graph TD
 - `js/base`: base JavaScript [ESLint] rules. It extends from [Airbnb], and it
   uses [Prettier] to format the code.
 
-[badge]: https://img.shields.io/badge/%40maarkllc%2Flinter-1.0.0-blue
-[npm-repo]: https://www.npmjs.com/package/@maarkllc/linter
+[badge]: https://img.shields.io/badge/%40maarkllc%2Fcoding--standards-1.0.0-blue
+[npm-repo]: https://www.npmjs.com/package/@maarkllc/coding-standards
 [ESLint]: https://eslint.org/
 [Prettier]: https://prettier.io/
 [Airbnb]: https://github.com/airbnb/javascript
