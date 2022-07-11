@@ -16,14 +16,21 @@
     "lint": "concurrently npm:lint:*",
     "fix": "concurrently npm:fix:*",
     "lint:base": "eslint -c ./js/base/index.js './js/base/**/*.js'",
-    "fix:base": "eslint -c ./js/base/index.js './js/base/**/*.js' --fix"
+    "fix:base": "eslint -c ./js/base/index.js './js/base/**/*.js' --fix",
+    "lint:react": "eslint -c ./js/react/index.js './js/react/**/*.js'",
+    "fix:react": "eslint -c ./js/react/index.js './js/react/**/*.js' --fix"
   },
   "peerDependencies": {
     "eslint": "^8.18.0",
-    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-airbnb": "^19.0.4",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-react": "^7.30.1",
     "prettier": "^2.7.1"
+  },
+  "dependencies": {
+    "prop-types": "^15.8.1",
+    "react": "^18.2.0"
   },
   "devDependencies": {
     "concurrently": "^7.2.2"

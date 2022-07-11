@@ -56,6 +56,7 @@ graph TD
 
 - `js/base`: base JavaScript [ESLint] rules. It extends from [Airbnb], and it
   uses [Prettier] to format the code.
+- `js/react`: JavaScript rules for React. It extends from `js/base`.
 
 [badge]: https://img.shields.io/badge/%40maarkllc%2Fcoding--standards-1.0.0-blue
 [npm-repo]: https://www.npmjs.com/package/@maarkllc/coding-standards
