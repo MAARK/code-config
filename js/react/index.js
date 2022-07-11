@@ -1,21 +1,16 @@
 /**
  * React ESLint configuration
  */
+const SUPPRESS = 0
+
 module.exports = {
-  extends: [
-    'plugin:import/recommended',
-    'plugin:react/recommended',
-    'plugin:jsx-a11y/recommended',
-    '../base'
-  ],
+  extends: ['airbnb', 'airbnb/hooks', '../base'],
   settings: {
     react: {
       version: 'detect'
     }
   },
-  parserOptions: {
-    ecmaFeatures: {
-      jsx: true
-    }
+  rules: {
+    'react/jsx-filename-extension': SUPPRESS
   }
 }

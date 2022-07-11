@@ -4,15 +4,16 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-const FooComponent = ({ className }) => (
-  <a className={className}>FooComponent Component</a>
-)
+function FooComponent({ time, className }) {
+  return <div className={className}>FooComponent Component: {time}</div>
+}
 
 FooComponent.defaultProps = {
   className: ''
 }
 
 FooComponent.propTypes = {
+  time: PropTypes.string.isRequired,
   className: PropTypes.string
 }
 
