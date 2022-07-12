@@ -1,6 +1,7 @@
 /**
  * Base ESLint configuration
  */
+
 module.exports = {
   env: {
     browser: true,

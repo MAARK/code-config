@@ -1,0 +1,9 @@
+/**
+ * The purpose of this file is just to test out the ESLint rules
+ */
+
+.selector {
+  display: block;
+  color: blue;
+  font-family: Helvetica, sans-serif;
+}

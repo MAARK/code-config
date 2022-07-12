@@ -2,17 +2,18 @@
 
 [![badge][badge]][npm-repo]
 
-Maark's recommended linter rules for code style and formatting.
+Maark's recommended coding standards that are defined in linter configurations
+and rules.
 
 ## Usage
 
-### Install
+### 1. Install
 
 ```bash
 npm i --save-dev @maarkllc/coding-standards
 ```
 
-### Configure ESLint
+### 2. Configure ESLint
 
 Create a `.eslintrc.js` file in your project root directory and extend the
 configuration depending on the browser stack you are using.
@@ -23,7 +24,7 @@ module.exports = {
 }
 ```
 
-### Configure Prettier
+### 3. Configure Prettier
 
 Create a `.prettierrc.js` file in your project root directory.
 
@@ -31,6 +32,16 @@ Create a `.prettierrc.js` file in your project root directory.
 const prettierConfig = require('@maarkllc/coding-standards/js/base/.prettierrc.js')
 
 module.exports = prettierConfig
+```
+
+### 4. Configure Stylelint
+
+Create a `.stylelintrc.js` file in your project root directory.
+
+```javascript
+module.exports = {
+  extends: ['@maarkllc/coding-standards/css/base']
+}
 ```
 
 ## Specific configurations
@@ -49,14 +60,21 @@ graph TD
     A --> js/angular
     B --> js/next
     ts/base --> ts/angular
-    css --> scss
+    css/base
+    scss/base
 ```
 
 ### Currently supported
 
+#### JavaScript
+
 - `js/base`: base JavaScript [ESLint] rules. It extends from [Airbnb], and it
   uses [Prettier] to format the code.
 - `js/react`: JavaScript rules for React. It extends from `js/base`.
+
+#### CSS
+
+- `css/base`: base CSS [Stylelint] rules.
 
 [badge]: https://img.shields.io/badge/%40maarkllc%2Fcoding--standards-1.0.0-blue
 [npm-repo]: https://www.npmjs.com/package/@maarkllc/coding-standards
@@ -64,4 +82,4 @@ graph TD
 [Prettier]: https://prettier.io/
 [Airbnb]: https://github.com/airbnb/javascript
 
-[diagram]: https://mermaid.live/edit#pako:eNpdj70OgzAMhF8l8gzqnqFSEX2CdmsY3MQFKhJQ4lStEO_e8Lfg6fzd6WSPoHtDIKH2ODTiXion0lwe73B6YqBK5PlZFPPqCTVXm7_gBD-RDgRdHTv0Ky126ujLK-K1eDH4ENchLDwkARlY8hZbk64bZ18BN2RJgUxy7lCg3JRycTDIdDUt9x7kC7tAGWDk_vZzGiT7SHuobDF9arfU9AdRW1Ad
+[diagram]: https://mermaid.live/edit#pako:eNpdjzEOgzAMRa8SeQZ1z1CpiJ6g3QqDm7hARQJKnKoV4u4NBBY8-b__bdkTqEETSGgcjq24l5UVsS6Ptz890VMt8vwsikU6QsX15q84wk-gA0HbhB5dosVOLX05IU6LV4MPceWTmZTfJWRgyBnsdDx0WswKuCVDFcjYrhNQ2TnmwqiR6ao7HhzIF_aeMsDAw-1nFUh2gfZQ2WF82myp-Q_5slQj
