@@ -2,8 +2,8 @@
 
 [![badge][badge]][npm-repo]
 
-Maark's recommended coding standards that are defined in linter configurations
-and rules.
+Collections of linter configurations and tools for enforcing consistent coding
+style and format according to Maark's coding standards.
 
 ## Usage
 

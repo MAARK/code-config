@@ -1,7 +1,7 @@
 {
   "name": "@maarkllc/coding-standards",
   "version": "1.0.0",
-  "description": "Maark's recommended linter rules for code style and formatting.",
+  "description": "Collections of linter configurations and tools for enforcing consistent coding style and format according to Maark's coding standards.",
   "author": "Maark, LLC",
   "license": "ISC",
   "repository": {
