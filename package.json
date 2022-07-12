@@ -12,12 +12,11 @@
     "url": "https://github.com/MAARK/coding-standards/issues"
   },
   "scripts": {
-    "test": "npm run lint",
-    "lint": "concurrently npm:lint:*",
-    "fix": "concurrently 'npm:lint:* -- {1}' -P -- --fix",
-    "lint:js:base": "eslint -c ./js/base/eslint.js './js/base/**/*.js'",
-    "lint:js:react": "eslint -c ./js/react/index.js './js/react/**/*.js'",
-    "lint:css:base": "stylelint --config ./css/base/index.js './css/base/**/*.css'"
+    "test": "concurrently npm:test:*",
+    "fix": "concurrently 'npm:test:* -- {1}' -P -- --fix",
+    "test:js:base:eslint": "eslint -c ./js/base/eslint/index.js './js/base/eslint/**/*.js'",
+    "test:js:react:eslint": "eslint -c ./js/react/eslint/index.js './js/react/eslint/**/*.js'",
+    "test:css:base:stylelint": "stylelint --config ./css/base/stylelint/index.js './css/base/stylelint/**/*.css'"
   },
   "peerDependencies": {
     "eslint": "^8.18.0",
