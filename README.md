@@ -20,7 +20,7 @@ configuration depending on the browser stack you are using.
 
 ```javascript
 module.exports = {
-  extends: ['@maarkllc/coding-standards/js/base']
+  extends: ['@maarkllc/coding-standards/js/base/eslint']
 }
 ```
 
@@ -29,7 +29,7 @@ module.exports = {
 Create a `.prettierrc.js` file in your project root directory.
 
 ```javascript
-const prettierConfig = require('@maarkllc/coding-standards/js/base/.prettierrc.js')
+const prettierConfig = require('@maarkllc/coding-standards/js/base/prettier')
 
 module.exports = prettierConfig
 ```
@@ -40,7 +40,7 @@ Create a `.stylelintrc.js` file in your project root directory.
 
 ```javascript
 module.exports = {
-  extends: ['@maarkllc/coding-standards/css/base']
+  extends: ['@maarkllc/coding-standards/css/base/stylelint']
 }
 ```
 

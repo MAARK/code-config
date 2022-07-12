@@ -1,6 +1,3 @@
-module.exports = {
-  semi: false,
-  tabWidth: 2,
-  singleQuote: true,
-  trailingComma: 'none'
-}
+const prettierConfig = require('./prettier')
+
+module.exports = prettierConfig

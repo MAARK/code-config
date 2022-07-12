@@ -1,7 +1,3 @@
-/**
- * React ESLint configuration
- */
-
 const SUPPRESS = 0
 
 module.exports = {

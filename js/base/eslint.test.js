@@ -1,7 +1,3 @@
-/**
- * The purpose of this file is just to test out the ESLint rules
- */
-
 const sample = {
   foo: 'bar',
   bar: 'foo'
