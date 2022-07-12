@@ -1,61 +1,93 @@
-# Default ESLint configuration
+# Coding standards
 
 [![badge][badge]][npm-repo]
 
-Maark's recommended base [ESLint] configuration projects. It extends from
-[Airbnb] base configuration and uses [Prettier] to format the code.
+Collections of linter configurations and tools for enforcing consistent coding
+style and format according to Maark's coding standards.
 
 ## Usage
 
-### Install
+### 1. Install
 
 ```bash
-npm i --save-dev @maarkllc/eslint-config-default
+npm i --save-dev @maarkllc/coding-standards
 ```
 
-### Configure ESLint
+### 2. Configure ESLint
 
-Create a `.eslintrc.js` file in your project root directory.
+Create a `.eslintrc.js` file in your project root directory and extend the
+configuration depending on the browser stack you are using.
 
 ```javascript
 module.exports = {
-  extends: ['@maarkllc/eslint-config-default']
+  extends: ['./node_modules/@maarkllc/coding-standards/js/base/eslint']
 }
 ```
 
-### Configure Prettier
+Or it can also be extended this way:
+
+```javascript
+const eslintConfig = require('@maarkllc/coding-standards/js/base/eslint')
+
+module.exports = eslingConfig
+```
+
+### 3. Configure Prettier
 
 Create a `.prettierrc.js` file in your project root directory.
 
 ```javascript
-const prettierConfig = require('@maarkllc/eslint-config-default/.prettierrc.js')
+const prettierConfig = require('@maarkllc/coding-standards/js/base/prettier')
 
 module.exports = prettierConfig
 ```
 
-## More specific configurations
+### 4. Configure Stylelint
 
-The intent here was to build the most basic set of rules for any JavaScript
-project but not all projects use the same stack, and it is also important to
-define rules to be able to identify anti-patterns and code-smells for specific
-known libraries.
+Create a `.stylelintrc.js` file in your project root directory.
 
-The idea is to create a structure of configurations that extend from each
-other. Something like [this diagram][diagram]:
+```javascript
+module.exports = {
+  extends: ['@maarkllc/coding-standards/css/base/stylelint']
+}
+```
+
+## Specific configurations
+
+The idea is to create a structure of configurations that extend from each other
+as needed depending on the project stack, it is important to define rules to be
+able to identify anti-patterns and code-smells for specific known libraries.
+[This diagram][diagram] helps illustrate the possible configurations but it
+doesn't represent the current state:
 
 ```mermaid
 %%{init: {'theme':'base'}}%%
 graph TD
-    A[eslint-config-default] --> B[eslint-config-react]
-    A --> eslint-config-vue
-    A --> eslint-config-angular
-    B --> eslint-config-next
+    A[js/base/eslint] --> B[js/react/eslint]
+    A --> js/vue/eslint
+    A --> js/angular/eslint
+    B --> js/next/eslint
+    ts/base/eslint --> ts/angular/eslint
+    css/base/stylelint
+    scss/base/stylelint
 ```
 
-[badge]: https://img.shields.io/badge/%40maarkllc%2Feslint--config--default-1.0.0-blue
-[npm-repo]: https://www.npmjs.com/package/@maarkllc/eslint-config-default
+### Currently supported
+
+#### JavaScript
+
+- `js/base`: base JavaScript [ESLint] rules. It extends from [Airbnb], and it
+  uses [Prettier] to format the code.
+- `js/react`: JavaScript rules for React. It extends from `js/base`.
+
+#### CSS
+
+- `css/base`: base CSS [Stylelint] rules.
+
+[badge]: https://img.shields.io/badge/%40maarkllc%2Fcoding--standards-1.0.0-blue
+[npm-repo]: https://www.npmjs.com/package/@maarkllc/coding-standards
 [ESLint]: https://eslint.org/
 [Prettier]: https://prettier.io/
 [Airbnb]: https://github.com/airbnb/javascript
 
-[diagram]: https://mermaid.live/edit#pako:eNp1j00OgjAQRq_SzJpegIWJBE-gO8tipAM06Q8pU6Mh3N2iuNDorL7Me5PMN0MbNEEJfcRxEKdaeZFnf6bJGs-yDb4zvdTUYbLcCCl3ovqCkbDlZjt8Gp_8mug_RN8ni_ElVD8ETzdeKRTgKDo0On87rxsFPJAjBWWOF5xyUn7JXho1Mh204RCh7NBOVAAmDse7b6HkmOgt1QZzc7dZywMW5VoW
+[diagram]: https://mermaid.live/edit#pako:eNptkMEOgjAMhl9l6RnCfQcTCT6B3pyHyipg2DBbZySEd3cQiEHdqfm_r2vaAcpOE0ioHD5qcSqUFfHtz3efXdFTRr5tLF9Emu5EPqWOsOQ1XuyZRvYMa8MXQFuFFt0G5iu09OIN4c3sWeP_f5R-UT33LX1y_wsgAUPOYKPjtsOkKeCaDCmQsZxkBcqO0QsPjUwH3XDnQN6w9ZQABu6OvS1Bsgu0SkWD8XJmscY3Oalvgw

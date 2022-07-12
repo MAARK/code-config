@@ -1,26 +1,38 @@
 {
-  "name": "@maarkllc/eslint-config-default",
+  "name": "@maarkllc/coding-standards",
   "version": "1.0.0",
-  "description": "Maark's default ESLint configuration for front-end development",
-  "main": "index.js",
+  "description": "Collections of linter configurations and tools for enforcing consistent coding style and format according to Maark's coding standards.",
   "author": "Maark, LLC",
   "license": "ISC",
   "repository": {
     "type": "git",
-    "url": "https://github.com/MAARK/eslint-config-default"
+    "url": "https://github.com/MAARK/coding-standards"
   },
   "bugs": {
-    "url": "https://github.com/MAARK/eslint-config-default/issues"
+    "url": "https://github.com/MAARK/coding-standards/issues"
   },
   "scripts": {
-    "test": "eslint '**/*.js'"
+    "test": "concurrently npm:test:*",
+    "fix": "concurrently 'npm:test:* -- {1}' -P -- --fix",
+    "test:js:base:eslint": "eslint -c ./js/base/eslint/index.js './js/base/eslint/**/*.js'",
+    "test:js:react:eslint": "eslint -c ./js/react/eslint/index.js './js/react/eslint/**/*.js'",
+    "test:css:base:stylelint": "stylelint --config ./css/base/stylelint/index.js './css/base/stylelint/**/*.css'"
   },
   "peerDependencies": {
     "eslint": "^8.18.0",
-    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-airbnb": "^19.0.4",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.2.1",
-    "prettier": "^2.7.1"
+    "prettier": "^2.7.1",
+    "stylelint": "^14.9.1",
+    "stylelint-config-standard": "^26.0.0"
+  },
+  "dependencies": {
+    "prop-types": "^15.8.1",
+    "react": "^18.2.0"
+  },
+  "devDependencies": {
+    "concurrently": "^7.2.2"
   },
   "engines": {
     "node": ">=16",
