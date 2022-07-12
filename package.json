@@ -1,15 +1,15 @@
 {
-  "name": "@maarkllc/coding-standards",
+  "name": "@maarkllc/code-config",
   "version": "1.0.0",
-  "description": "Collections of linter configurations and tools for enforcing consistent coding style and format according to Maark's coding standards.",
+  "description": "Collections of linter configurations and tools for enforcing consistent coding style and format according to Maark's recommendations.",
   "author": "Maark, LLC",
   "license": "ISC",
   "repository": {
     "type": "git",
-    "url": "https://github.com/MAARK/coding-standards"
+    "url": "https://github.com/MAARK/code-config"
   },
   "bugs": {
-    "url": "https://github.com/MAARK/coding-standards/issues"
+    "url": "https://github.com/MAARK/code-config/issues"
   },
   "scripts": {
     "test": "concurrently npm:test:*",

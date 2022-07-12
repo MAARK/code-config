@@ -1,16 +1,16 @@
-# Coding standards
+# Code configurations
 
 [![badge][badge]][npm-repo]
 
 Collections of linter configurations and tools for enforcing consistent coding
-style and format according to Maark's coding standards.
+style and format according to Maark's recommendations.
 
 ## Usage
 
 ### 1. Install
 
 ```bash
-npm i --save-dev @maarkllc/coding-standards
+npm i --save-dev @maarkllc/code-config
 ```
 
 ### 2. Configure ESLint
@@ -20,14 +20,14 @@ configuration depending on the browser stack you are using.
 
 ```javascript
 module.exports = {
-  extends: ['./node_modules/@maarkllc/coding-standards/js/base/eslint']
+  extends: ['./node_modules/@maarkllc/code-config/js/base/eslint']
 }
 ```
 
 Or it can also be extended this way:
 
 ```javascript
-const eslintConfig = require('@maarkllc/coding-standards/js/base/eslint')
+const eslintConfig = require('@maarkllc/code-config/js/base/eslint')
 
 module.exports = eslingConfig
 ```
@@ -37,7 +37,7 @@ module.exports = eslingConfig
 Create a `.prettierrc.js` file in your project root directory.
 
 ```javascript
-const prettierConfig = require('@maarkllc/coding-standards/js/base/prettier')
+const prettierConfig = require('@maarkllc/code-config/js/base/prettier')
 
 module.exports = prettierConfig
 ```
@@ -48,7 +48,7 @@ Create a `.stylelintrc.js` file in your project root directory.
 
 ```javascript
 module.exports = {
-  extends: ['@maarkllc/coding-standards/css/base/stylelint']
+  extends: ['@maarkllc/code-config/css/base/stylelint']
 }
 ```
 
@@ -84,8 +84,8 @@ graph TD
 
 - `css/base`: base CSS [Stylelint] rules.
 
-[badge]: https://img.shields.io/badge/%40maarkllc%2Fcoding--standards-1.0.0-blue
-[npm-repo]: https://www.npmjs.com/package/@maarkllc/coding-standards
+[badge]: https://img.shields.io/badge/%40maarkllc%2Fcode--config-1.0.0-blue
+[npm-repo]: https://www.npmjs.com/package/@maarkllc/code-config
 [ESLint]: https://eslint.org/
 [Prettier]: https://prettier.io/
 [Airbnb]: https://github.com/airbnb/javascript
