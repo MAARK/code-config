@@ -20,8 +20,16 @@ configuration depending on the browser stack you are using.
 
 ```javascript
 module.exports = {
-  extends: ['@maarkllc/coding-standards/js/base/eslint']
+  extends: ['./node_modules/@maarkllc/coding-standards/js/base/eslint']
 }
+```
+
+Or it can also be extended this way:
+
+```javascript
+const eslintConfig = require('@maarkllc/coding-standards/js/base/eslint')
+
+module.exports = eslingConfig
 ```
 
 ### 3. Configure Prettier
@@ -55,13 +63,13 @@ doesn't represent the current state:
 ```mermaid
 %%{init: {'theme':'base'}}%%
 graph TD
-    A[js/base] --> B[js/react]
-    A --> js/vue
-    A --> js/angular
-    B --> js/next
-    ts/base --> ts/angular
-    css/base
-    scss/base
+    A[js/base/eslint] --> B[js/react/eslint]
+    A --> js/vue/eslint
+    A --> js/angular/eslint
+    B --> js/next/eslint
+    ts/base/eslint --> ts/angular/eslint
+    css/base/stylelint
+    scss/base/stylelint
 ```
 
 ### Currently supported
@@ -82,4 +90,4 @@ graph TD
 [Prettier]: https://prettier.io/
 [Airbnb]: https://github.com/airbnb/javascript
 
-[diagram]: https://mermaid.live/edit#pako:eNpdjzEOgzAMRa8SeQZ1z1CpiJ6g3QqDm7hARQJKnKoV4u4NBBY8-b__bdkTqEETSGgcjq24l5UVsS6Ptz890VMt8vwsikU6QsX15q84wk-gA0HbhB5dosVOLX05IU6LV4MPceWTmZTfJWRgyBnsdDx0WswKuCVDFcjYrhNQ2TnmwqiR6ao7HhzIF_aeMsDAw-1nFUh2gfZQ2WF82myp-Q_5slQj
+[diagram]: https://mermaid.live/edit#pako:eNptkMEOgjAMhl9l6RnCfQcTCT6B3pyHyipg2DBbZySEd3cQiEHdqfm_r2vaAcpOE0ioHD5qcSqUFfHtz3efXdFTRr5tLF9Emu5EPqWOsOQ1XuyZRvYMa8MXQFuFFt0G5iu09OIN4c3sWeP_f5R-UT33LX1y_wsgAUPOYKPjtsOkKeCaDCmQsZxkBcqO0QsPjUwH3XDnQN6w9ZQABu6OvS1Bsgu0SkWD8XJmscY3Oalvgw
