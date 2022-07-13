@@ -1,6 +1,6 @@
 # Code configurations
 
-[![badge][badge]][npm-repo]
+[![badge][badge]][npm-repo] [![CircleCI][CircleCI]][CircleCI-link]
 
 Collections of linter configurations and tools for enforcing consistent coding
 style and format according to Maark's recommendations.
@@ -87,6 +87,10 @@ graph TD
 
 [badge]: https://img.shields.io/badge/%40maarkllc%2Fcode--config-1.0.0-blue
 [npm-repo]: https://www.npmjs.com/package/@maarkllc/code-config
+
+[CircleCI]: https://circleci.com/gh/MAARK/code-config.svg?style=shield
+[CircleCI-link]: https://app.circleci.com/pipelines/github/MAARK/code-config
+
 [ESLint]: https://eslint.org/
 [Prettier]: https://prettier.io/
 [Airbnb]: https://github.com/airbnb/javascript
