@@ -14,9 +14,8 @@
   "scripts": {
     "test": "concurrently npm:test:*",
     "fix": "concurrently 'npm:test:* -- {1}' -P -- --fix",
-    "test:js:base:eslint": "eslint -c ./js/base/eslint/index.js './js/base/eslint/**/*.js'",
-    "test:js:react:eslint": "eslint -c ./js/react/eslint/index.js './js/react/eslint/**/*.js'",
-    "test:css:base:stylelint": "stylelint --config ./css/base/stylelint/index.js './css/base/stylelint/**/*.css'"
+    "test:eslint": "node ./test/eslint.js",
+    "test:stylelint": "node ./test/stylelint.js"
   },
   "peerDependencies": {
     "eslint": "^8.18.0",

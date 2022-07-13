@@ -29,7 +29,7 @@ Or it can also be extended this way:
 ```javascript
 const eslintConfig = require('@maarkllc/code-config/js/base/eslint')
 
-module.exports = eslingConfig
+module.exports = eslintConfig
 ```
 
 ### 3. Configure Prettier
@@ -48,7 +48,7 @@ Create a `.stylelintrc.js` file in your project root directory.
 
 ```javascript
 module.exports = {
-  extends: ['@maarkllc/code-config/css/base/stylelint']
+  extends: ['./node_modules/@maarkllc/code-config/css/base/stylelint']
 }
 ```
 
@@ -57,8 +57,8 @@ module.exports = {
 The idea is to create a structure of configurations that extend from each other
 as needed depending on the project stack, it is important to define rules to be
 able to identify anti-patterns and code-smells for specific known libraries.
-[This diagram][diagram] helps illustrate the possible configurations but it
-doesn't represent the current state:
+[This diagram][diagram] helps illustrate the possible configurations, but it
+doesn't represent the current availability:
 
 ```mermaid
 %%{init: {'theme':'base'}}%%
