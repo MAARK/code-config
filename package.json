@@ -1,7 +1,7 @@
 {
   "name": "@maarkllc/code-config",
   "version": "1.0.0",
-  "description": "Collections of linter configurations and tools for enforcing consistent coding style and format according to Maark's recommendations.",
+  "description": "Collection of linter configurations and tools for enforcing consistent coding style and format according to Maark's recommendations.",
   "author": "Maark, LLC",
   "license": "ISC",
   "repository": {

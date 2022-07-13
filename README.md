@@ -2,7 +2,7 @@
 
 [![badge][badge]][npm-repo] [![badge-ci][badge-ci]][CircleCI]
 
-Collections of linter configurations and tools for enforcing consistent coding
+Collection of linter configurations and tools for enforcing consistent coding
 style and format according to Maark's recommendations.
 
 ## Usage
