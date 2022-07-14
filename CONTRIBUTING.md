@@ -10,7 +10,8 @@ Anyone can propose changes to the project:
 1. Fork the repository and create a new branch for the contribution.
 2. Make the proposed changes.
 3. Run `npm test` to ensure the changes do not break existing rules.
-4. Update the README.md file if instructions changed with the new changes.
+4. Update the README.md file if instructions changed. Make sure to update the
+   diagram if necessary.
 5. Create the pull request against the `main` branch.
 
 ## Release Process
