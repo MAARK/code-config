@@ -2,8 +2,31 @@
 
 [![badge][badge]][npm-repo] [![badge-ci][badge-ci]][CircleCI]
 
-Collection of linter configurations and tools for enforcing consistent coding
-style and format according to Maark's recommendations.
+Collection of linter configurations and tools to enforce consistent code style
+and format according to Maark's recommendations.
+
+The idea is to have a structure of configurations that extend from each other
+as needed depending on the project stack, it is important to define rules to be
+able to identify anti-patterns and code-smells for specific known libraries.
+[This diagram][diagram] helps illustrate the possible configurations:
+
+```mermaid
+%%{init: {'theme':'base'}}%%
+graph TD
+    subgraph Legend
+        L1[Available]:::available --> L2[Not ready]
+    end
+
+    A[js/base/eslint]:::available ---> B[js/react/eslint]:::available
+    A --> js/vue/eslint
+    A --> js/angular/eslint
+    B --> js/next/eslint
+    C[css/base/stylelint]:::available --> scss/base/stylelint
+    A ---> D[ts/base/eslint]
+    D --> ts/angular/eslint
+
+    classDef available stroke:#0B410E,fill:#94D1BE
+```
 
 ## Usage
 
@@ -52,36 +75,16 @@ module.exports = {
 }
 ```
 
-## Specific configurations
+## Currently supported
 
-The idea is to create a structure of configurations that extend from each other
-as needed depending on the project stack, it is important to define rules to be
-able to identify anti-patterns and code-smells for specific known libraries.
-[This diagram][diagram] helps illustrate the possible configurations, but it
-doesn't represent the current availability:
-
-```mermaid
-%%{init: {'theme':'base'}}%%
-graph TD
-    A[js/base/eslint] --> B[js/react/eslint]
-    A --> js/vue/eslint
-    A --> js/angular/eslint
-    B --> js/next/eslint
-    ts/base/eslint --> ts/angular/eslint
-    css/base/stylelint
-    scss/base/stylelint
-```
-
-### Currently supported
-
-#### JavaScript
+### JavaScript
 
 - `js/base/eslint`: base JavaScript [ESLint] rules. It extends from [Airbnb],
   and it uses [Prettier] to format the code.
 - `js/react/eslint`: JavaScript rules for React. It extends from
   `js/base/eslint`.
 
-#### CSS
+### CSS
 
 - `css/base/stylelint`: base CSS [Stylelint] rules.
 
@@ -95,4 +98,4 @@ graph TD
 [Prettier]: https://prettier.io/
 [Airbnb]: https://github.com/airbnb/javascript
 
-[diagram]: https://mermaid.live/edit#pako:eNptkMEOgjAMhl9l6RnCfQcTCT6B3pyHyipg2DBbZySEd3cQiEHdqfm_r2vaAcpOE0ioHD5qcSqUFfHtz3efXdFTRr5tLF9Emu5EPqWOsOQ1XuyZRvYMa8MXQFuFFt0G5iu09OIN4c3sWeP_f5R-UT33LX1y_wsgAUPOYKPjtsOkKeCaDCmQsZxkBcqO0QsPjUwH3XDnQN6w9ZQABu6OvS1Bsgu0SkWD8XJmscY3Oalvgw
+[diagram]: https://mermaid.live/edit#pako:eNptUc2OgjAQfpWmXjHKxsv2YCLCjexl9wYeBhiwu6WYdjBLjO--RWAN6hyadr6_aebC86ZALnhl4HRkX2GqmSvbZkMjxgp1MTT7iv1kdwapIFN4EELA9GDL5ZbFb8lHQ8wgFN1hEP2rh3OXfNtVBhZXaJXU9OjhTIKe4ixyesUZbW5xjnduJ6cHAHTVKjAzMJhAjb80Q_ZJbse5LHUKX422ZfaZdE91eJjQ_HMDGt7E9DzTAOcKrA2xZPcwS6b5QbFYBxt_HXmlVEos3jehH0Tc4zWaGmThlnbpHVJOR6wx5cJd-_SUp_rqeO2pAMKokNQYLkpQFj0OLTWfnc65INPiRAoluH3XI-v6B-1VrQ0

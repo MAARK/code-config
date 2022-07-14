@@ -1,27 +1,31 @@
 const { ESLint } = require('eslint')
-const { getDirectoriesRecursive } = require('./file-system')
+const { getDirectoriesRecursive } = require('./utils/file-system')
 
 const [, , option] = process.argv
 const fix = option === '--fix'
-const defaultPattern = '**/*.js'
+const defaultPattern = '**/*.{js,jsx,ts,tsx}'
 
-async function lint(eslintPath) {
+function getOptions(eslintPath) {
   const override = {
     overrideConfigFile: `./${eslintPath}/index.js`,
     ignore: false
   }
-  const patterns = eslintPath
-    ? [`./${eslintPath}/${defaultPattern}`]
-    : defaultPattern
 
-  // 1. Create an instance with the `fix` option.
-  const eslint = new ESLint({
+  return {
     fix,
     cache: false,
     ...(eslintPath ? override : {})
-  })
+  }
+}
+
+async function lint(eslintPath) {
+  // 1. Create an instance with the `fix` option.
+  const eslint = new ESLint(getOptions(eslintPath))
 
   // 2. Lint files. This doesn't modify target files.
+  const patterns = eslintPath
+    ? [`./${eslintPath}/${defaultPattern}`]
+    : [defaultPattern]
   const results = await eslint.lintFiles(patterns)
 
   // 3. Modify the files with the fixed code.

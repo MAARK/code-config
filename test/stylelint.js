@@ -1,5 +1,5 @@
 const stylelint = require('stylelint')
-const { getDirectoriesRecursive } = require('./file-system')
+const { getDirectoriesRecursive } = require('./utils/file-system')
 
 const [, , option] = process.argv
 const fix = option === '--fix'
@@ -9,7 +9,7 @@ async function lint(stylelintPath) {
     fix,
     formatter: 'verbose',
     cwd: `${process.cwd()}/${stylelintPath}`,
-    files: ['**/*.css', '**/*.scss']
+    files: ['**/*.{css,scss,sass,less}']
   })
 
   console.log(output)
@@ -17,8 +17,8 @@ async function lint(stylelintPath) {
 
 function lintAll() {
   const stylelintDirs = [
-    ...getDirectoriesRecursive('./css')
-    // ...getDirectoriesRecursive('./scss')
+    ...getDirectoriesRecursive('./css'),
+    ...getDirectoriesRecursive('./scss')
   ].filter((dir) => dir.includes('stylelint'))
 
   return Promise.all(stylelintDirs.map((stylelintPath) => lint(stylelintPath)))
