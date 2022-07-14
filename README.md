@@ -21,7 +21,7 @@ graph TD
     A --> js/vue/eslint
     A --> js/angular/eslint
     B --> js/next/eslint
-    C[css/base/stylelint]:::available --> scss/base/stylelint
+    C[css/base/stylelint]:::available --> scss/base/stylelint:::available
     A ---> D[ts/base/eslint]
     D --> ts/angular/eslint
 
@@ -98,4 +98,4 @@ module.exports = {
 [Prettier]: https://prettier.io/
 [Airbnb]: https://github.com/airbnb/javascript
 
-[diagram]: https://mermaid.live/edit#pako:eNptUc2OgjAQfpWmXjHKxsv2YCLCjexl9wYeBhiwu6WYdjBLjO--RWAN6hyadr6_aebC86ZALnhl4HRkX2GqmSvbZkMjxgp1MTT7iv1kdwapIFN4EELA9GDL5ZbFb8lHQ8wgFN1hEP2rh3OXfNtVBhZXaJXU9OjhTIKe4ixyesUZbW5xjnduJ6cHAHTVKjAzMJhAjb80Q_ZJbse5LHUKX422ZfaZdE91eJjQ_HMDGt7E9DzTAOcKrA2xZPcwS6b5QbFYBxt_HXmlVEos3jehH0Tc4zWaGmThlnbpHVJOR6wx5cJd-_SUp_rqeO2pAMKokNQYLkpQFj0OLTWfnc65INPiRAoluH3XI-v6B-1VrQ0
+[diagram]: https://mermaid.live/edit#pako:eNptkcFugzAMhl8lSq9ULVMvy6FSGdzQLtsNejDEULYQqsRUQ1XffaHAJlp8iBL_n3878pXnjUQueGngfGKfYaqZC9tmQyLGErUckn3EfnK4QKUgU3gUQsD0YOv1nsUvyXtDzCDI7jgU_VUP5yH5spsMLG7QqkrTo4czCXrEWeS0xIw293aOu7ST04MAumwVmJkYTKLGH5opb0lux7ksdQqXRtsz-wwtj-bYMKH5Rwc1vBvR83yDnCuwNsSC_Te2ZJpvFKttsPO3kVdUSonV6y70g4h7vEZTQyXdAq-9Q8rphDWmXLhr3z3lqb45rj1LIIxkRY3hogBl0ePQUvPR6ZwLMi1OUFiB2309UrdfeyGxXA
