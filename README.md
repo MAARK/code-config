@@ -36,7 +36,7 @@ graph TD
 npm i --save-dev @maarkllc/code-config
 ```
 
-### 2. Configure ESLint
+### 2. Configure [ESLint]
 
 Create a `.eslintrc.js` file in your project root directory and extend the
 configuration depending on the browser stack you are using.
@@ -55,7 +55,7 @@ const eslintConfig = require('@maarkllc/code-config/js/base/eslint')
 module.exports = eslintConfig
 ```
 
-### 3. Configure Prettier
+### 3. Configure [Prettier]
 
 Create a `.prettierrc.js` file in your project root directory.
 
@@ -65,7 +65,7 @@ const prettierConfig = require('@maarkllc/code-config/js/base/prettier')
 module.exports = prettierConfig
 ```
 
-### 4. Configure Stylelint
+### 4. Configure [Stylelint]
 
 Create a `.stylelintrc.js` file in your project root directory.
 
@@ -75,18 +75,19 @@ module.exports = {
 }
 ```
 
-## Currently supported
+## Supported configurations by linter
 
-### JavaScript
+### ESLint
 
-- `js/base/eslint`: base JavaScript [ESLint] rules. It extends from [Airbnb],
-  and it uses [Prettier] to format the code.
-- `js/react/eslint`: JavaScript rules for React. It extends from
-  `js/base/eslint`.
+- `js/base/eslint`: It extends from [Airbnb] base configuration.
+- `js/react/eslint`: It extends from `js/base/eslint` and Airbnb full
+  configuration and hooks rules.
 
-### CSS
+### Stylelint
 
-- `css/base/stylelint`: base CSS [Stylelint] rules.
+- `css/base/stylelint`: It extends from `stylelint-config-standard`.
+- `scss/base/stylelint`: It extends from `css/base/stylelint` and
+  `stylelint-config-standard-scss`.
 
 [badge]: https://img.shields.io/badge/%40maarkllc%2Fcode--config-v1.0.0-blue
 [badge-ci]: https://circleci.com/gh/MAARK/code-config/tree/v1.0.0.svg?style=shield
@@ -96,6 +97,7 @@ module.exports = {
 
 [ESLint]: https://eslint.org/
 [Prettier]: https://prettier.io/
+[Stylelint]: https://stylelint.io/
 [Airbnb]: https://github.com/airbnb/javascript
 
 [diagram]: https://mermaid.live/edit#pako:eNptkcFugzAMhl8lSq9ULVMvy6FSGdzQLtsNejDEULYQqsRUQ1XffaHAJlp8iBL_n3878pXnjUQueGngfGKfYaqZC9tmQyLGErUckn3EfnK4QKUgU3gUQsD0YOv1nsUvyXtDzCDI7jgU_VUP5yH5spsMLG7QqkrTo4czCXrEWeS0xIw293aOu7ST04MAumwVmJkYTKLGH5opb0lux7ksdQqXRtsz-wwtj-bYMKH5Rwc1vBvR83yDnCuwNsSC_Te2ZJpvFKttsPO3kVdUSonV6y70g4h7vEZTQyXdAq-9Q8rphDWmXLhr3z3lqb45rj1LIIxkRY3hogBl0ePQUvPR6ZwLMi1OUFiB2309UrdfeyGxXA
