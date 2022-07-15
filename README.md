@@ -90,9 +90,9 @@ module.exports = {
   `stylelint-config-standard-scss`.
 
 [badge]: https://img.shields.io/badge/%40maarkllc%2Fcode--config-v1.0.0-blue
-[badge-ci]: https://circleci.com/gh/MAARK/code-config/tree/v1.0.0.svg?style=shield
-
 [npm-repo]: https://www.npmjs.com/package/@maarkllc/code-config
+
+[badge-ci]: https://circleci.com/gh/MAARK/code-config.svg?style=shield
 [CircleCI]: https://app.circleci.com/pipelines/github/MAARK/code-config
 
 [ESLint]: https://eslint.org/
