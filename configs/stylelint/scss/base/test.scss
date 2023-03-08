@@ -1,3 +1,7 @@
+%placeholder {
+  color: green;
+}
+
 .selector {
   display: block;
   color: blue;
@@ -8,6 +12,8 @@
     flex-direction: column;
 
     &--modifier {
+      @extend %placeholder;
+
       flex-direction: row;
     }
   }
