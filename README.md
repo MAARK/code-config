@@ -5,6 +5,24 @@
 Collection of linter configurations and tools to enforce consistent code style
 and format according to Maark's recommendations.
 
+## Usage
+
+Directly using `npx`
+
+```shell
+npx @maarkllc/code-config eslint
+```
+
+Or you can install Howl-CLI globally and use `howl`
+
+```shell
+npm i -g @maarkllc/code-config
+
+howl eslint
+```
+
+## Supported configurations by linter
+
 The idea is to have a structure of configurations that extend from each other
 as needed depending on the project stack, it is important to define rules to be
 able to identify anti-patterns and code-smells for specific known libraries.
@@ -27,55 +45,6 @@ graph TD
 
     classDef available stroke:#0B410E,fill:#94D1BE
 ```
-
-## Usage
-
-### 1. Install
-
-```bash
-npm i --save-dev @maarkllc/code-config
-```
-
-### 2. Configure [ESLint]
-
-Create a `.eslintrc.js` file in your project root directory and extend the
-configuration depending on the browser stack you are using.
-
-```javascript
-module.exports = {
-  extends: ['./node_modules/@maarkllc/code-config/configs/eslint/js/base']
-}
-```
-
-Or it can also be extended this way:
-
-```javascript
-const eslintConfig = require('@maarkllc/code-config/configs/eslint/js/base')
-
-module.exports = eslintConfig
-```
-
-### 3. Configure [Prettier]
-
-Create a `.prettierrc.js` file in your project root directory.
-
-```javascript
-const prettierConfig = require('@maarkllc/code-config/configs/prettier')
-
-module.exports = prettierConfig
-```
-
-### 4. Configure [Stylelint]
-
-Create a `.stylelintrc.js` file in your project root directory.
-
-```javascript
-module.exports = {
-  extends: ['./node_modules/@maarkllc/code-config/configs/stylelint/css/base']
-}
-```
-
-## Supported configurations by linter
 
 ### ESLint
 

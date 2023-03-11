@@ -6,7 +6,7 @@ import { actionText, dim } from 'src/utils/log-style'
 import eslintChoices from 'src/prompts/choices/eslint'
 
 const DEPENDENCIES = [
-  '@maarkllc/code-config@2.0.0',
+  '@maarkllc/code-config@1.1.0',
   'eslint@8.35.0',
   'prettier@2.8.4',
   'eslint-config-prettier@8.7.0',
