@@ -1,14 +1,25 @@
 const fs = require('fs')
+const path = require('path')
 const { ESLint } = require('eslint')
 const { getDirectoriesRecursive } = require('./utils/file-system')
 
 const [, , option] = process.argv
 const fix = option === '--fix'
 const DEFAULT_PATTERNS = '**/*.{js,jsx,ts,tsx}'
-const ESLINT_CONFIGS = './configs/eslint'
+const ESLINT_CONFIGS = path.join('.', 'configs', 'eslint')
 
-function getEslintConfig(path) {
-  return `./${path}/index.js`
+function getEslintConfig(eslintPath) {
+  return path.join('.', eslintPath, 'index.js')
+}
+
+function getEslintMock(eslintPath) {
+  const mockPath = path.join('.', eslintPath, 'mock.json')
+
+  if (!fs.existsSync(mockPath)) return {}
+
+  const json = fs.readFileSync(mockPath, 'utf8')
+
+  return JSON.parse(json)
 }
 
 async function lint(eslintPath) {
@@ -17,7 +28,8 @@ async function lint(eslintPath) {
     fix,
     cache: false,
     ignore: false,
-    overrideConfigFile: getEslintConfig(eslintPath)
+    overrideConfigFile: getEslintConfig(eslintPath),
+    overrideConfig: getEslintMock(eslintPath)
   })
 
   // 2. Lint files. This doesn't modify target files.
@@ -41,8 +53,8 @@ async function lint(eslintPath) {
 }
 
 function lintAll() {
-  const eslintDirs = getDirectoriesRecursive(ESLINT_CONFIGS).filter((path) =>
-    fs.existsSync(getEslintConfig(path))
+  const eslintDirs = getDirectoriesRecursive(ESLINT_CONFIGS).filter(
+    (eslintPath) => fs.existsSync(getEslintConfig(eslintPath))
   )
   return Promise.all(eslintDirs.map((eslintPath) => lint(eslintPath)))
 }

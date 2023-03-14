@@ -1,0 +1,10 @@
+{
+  "settings": {
+    "import/resolver": {
+      "alias": [
+        ["react", "./src/mocks/react.js"],
+        ["prop-types", "./src/mocks/prop-types.js"]
+      ]
+    }
+  }
+}

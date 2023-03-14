@@ -38,9 +38,7 @@
     "stylelint-config-standard-scss": "^7.0.1"
   },
   "dependencies": {
-    "enquirer": "^2.3.6",
-    "prop-types": "^15.8.1",
-    "react": "^18.2.0"
+    "enquirer": "^2.3.6"
   },
   "engines": {
     "node": ">=16",
