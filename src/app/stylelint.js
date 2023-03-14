@@ -5,7 +5,7 @@ import { askStylelintConfig } from 'src/prompts'
 import { addScripts, createPackageJson, runCommand } from 'src/utils/npm'
 import stylelintChoices from 'src/prompts/choices/stylelint'
 
-const DEPENDENCIES = ['@maarkllc/code-config@2.0.0', 'stylelint@15.2.0']
+const DEPENDENCIES = ['@maarkllc/code-config@1.1.0', 'stylelint@15.2.0']
 
 async function installDependencies(configChoice) {
   const dependencies = [...DEPENDENCIES, ...configChoice.dependencies]

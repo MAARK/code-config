@@ -8,3 +8,14 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 
 * Initial proposal.
+
+## 1.1.0 (2023-03-15)
+
+### Added
+
+* Howl-CLI
+
+### Updates
+
+* Moves the existing configuration to a folder
+* Inverts the language and tool in the folder structure
