@@ -12,6 +12,7 @@ module.exports = {
     // suppress rules
     'no-console': 0,
     'no-plusplus': 0,
+    'import/prefer-default-export': 0,
     // error rules
     'require-await': 2,
     'prefer-destructuring': [2, { object: true, array: true }]
