@@ -2,6 +2,12 @@
 
 [![badge][badge]][npm-repo] [![badge-ci][badge-ci]][CircleCI]
 
+[badge]: https://img.shields.io/badge/%40maarkllc%2Fcode--config-v1.1.0-blue
+[npm-repo]: https://www.npmjs.com/package/@maarkllc/code-config
+
+[badge-ci]: https://circleci.com/gh/MAARK/code-config.svg?style=shield
+[CircleCI]: https://app.circleci.com/pipelines/github/MAARK/code-config
+
 Collection of linter configurations and tools to enforce consistent code style
 and format according to Maark's recommendations.
 
@@ -20,6 +26,11 @@ npm i -g @maarkllc/code-config
 
 howl eslint
 ```
+
+## Available commands
+
+* `eslint` To install an ESLint configuration
+* `stylelint` To install a Stylelint configuration
 
 ## Supported configurations by linter
 
@@ -58,11 +69,11 @@ graph TD
 - `stylelint/scss/base`: It extends from `stylelint/css/base` and
   `stylelint-config-standard-scss`.
 
-[badge]: https://img.shields.io/badge/%40maarkllc%2Fcode--config-v1.1.0-blue
-[npm-repo]: https://www.npmjs.com/package/@maarkllc/code-config
+## Development
 
-[badge-ci]: https://circleci.com/gh/MAARK/code-config.svg?style=shield
-[CircleCI]: https://app.circleci.com/pipelines/github/MAARK/code-config
+For more information please refer to the [documentation].
+
+[documentation]: ./docs/README.md
 
 [ESLint]: https://eslint.org/
 [Prettier]: https://prettier.io/
