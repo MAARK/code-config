@@ -1,9 +1,9 @@
 import { actionText, dim } from 'src/utils/log-style'
-import { eslintDoc } from './eslint'
-import { stylelintDoc } from './stylelint'
+import { eslintDoc } from 'src/app/eslint'
+import { stylelintDoc } from 'src/app/stylelint'
 
 function header() {
-  console.log(`\n           .${actionText('\tHowl-CLI')}`)
+  console.log(`\n           .${actionText('\tCode-config CLI')}`)
   console.log('          / V\\')
   console.log('        / `  /')
   console.log('       <<   |\tCommand-line tools to setup and manage')
@@ -18,7 +18,7 @@ function header() {
 
 function synopsis() {
   console.log('\nSynopsis:\n')
-  console.log('\thowl [command] [...parameters]')
+  console.log('\tcode-config [command]')
 }
 
 function help() {
@@ -29,7 +29,7 @@ function help() {
 
   // Help
   console.log(`\n\t${actionText('help')}\t\t- Show this help screen`)
-  console.log(`\n\t\t\t  ${dim('howl help')}`)
+  console.log(`\n\t\t\t  ${dim('code-config help')}`)
 
   eslintDoc()
   stylelintDoc()

@@ -13,13 +13,13 @@ function getEslintConfig(eslintPath) {
 }
 
 function getEslintMock(eslintPath) {
-  const mockPath = path.join('.', eslintPath, 'mock.json')
+  const infoPath = path.join('.', eslintPath, 'info.json')
 
-  if (!fs.existsSync(mockPath)) return {}
+  if (!fs.existsSync(infoPath)) return {}
 
-  const json = fs.readFileSync(mockPath, 'utf8')
+  const json = fs.readFileSync(infoPath, 'utf8')
 
-  return JSON.parse(json)
+  return JSON.parse(json).mockConfig || {}
 }
 
 async function lint(eslintPath) {

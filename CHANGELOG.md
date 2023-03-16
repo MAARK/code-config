@@ -9,11 +9,14 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 * Initial proposal.
 
-## 1.1.0 (2023-03-15)
+## 2.0.0 (2023-03-17)
 
 ### Added
 
-* Howl-CLI
+* Code-config CLI
+* `eslint` command to create a new ESLint configuration automatically
+* `stylelint` command to create a new Stylelint configuration automatically
+* Auto-install necessary dependencies when running commands
 
 ### Updates
 

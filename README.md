@@ -2,7 +2,7 @@
 
 [![badge][badge]][npm-repo] [![badge-ci][badge-ci]][CircleCI]
 
-[badge]: https://img.shields.io/badge/%40maarkllc%2Fcode--config-v1.1.0-blue
+[badge]: https://img.shields.io/badge/%40maarkllc%2Fcode--config-v2.0.0-blue
 [npm-repo]: https://www.npmjs.com/package/@maarkllc/code-config
 
 [badge-ci]: https://circleci.com/gh/MAARK/code-config.svg?style=shield
@@ -19,12 +19,12 @@ Directly using `npx`
 npx @maarkllc/code-config eslint
 ```
 
-Or you can install Howl-CLI globally and use `howl`
+Or you can install the `code-config` CLI globally
 
 ```shell
 npm i -g @maarkllc/code-config
 
-howl eslint
+code-config eslint
 ```
 
 ## Available commands

@@ -1,4 +1,5 @@
 import fs from 'fs'
+import path from 'path'
 
 export function readFile({ filepath }) {
   try {
@@ -24,4 +25,19 @@ export function writeJsonFile({ filepath, data }) {
   }
 
   return true
+}
+
+function flatten(lists) {
+  return lists.reduce((a, b) => a.concat(b), [])
+}
+
+function getDirectory(srcPath) {
+  return fs
+    .readdirSync(srcPath)
+    .map((file) => path.join(srcPath, file))
+    .filter((filePath) => fs.statSync(filePath).isDirectory())
+}
+
+export function getDirectories(srcPath) {
+  return [srcPath, ...flatten(getDirectory(srcPath).map(getDirectories))]
 }

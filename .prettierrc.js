@@ -1,3 +1,3 @@
-const prettierConfig = require('./configs/prettier')
+const prettierConfig = require('./configs/eslint/js/base/prettier')
 
 module.exports = prettierConfig

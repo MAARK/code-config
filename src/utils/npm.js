@@ -48,3 +48,13 @@ export function addScripts(scripts) {
 
   writeJsonFile({ filepath: 'package.json', data: packageJson })
 }
+
+export async function installDependencies(dependencies) {
+  const parsedDependencies = Object.entries(dependencies)
+    .map(([name, version]) => `${name}@${version}`)
+    .join(' ')
+
+  await runCommand({
+    command: `npm i --save-dev ${parsedDependencies}`
+  })
+}

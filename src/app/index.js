@@ -1,32 +1,44 @@
-import { askCoreCommands } from 'src/prompts'
+import { prompt } from 'enquirer'
 import { actionText } from 'src/utils/log-style'
-import eslint from './eslint'
-import help from './help'
-import stylelint from './stylelint'
+import eslint from 'src/app/eslint'
+import help from 'src/app/help'
+import stylelint from 'src/app/stylelint'
 
 const CORE_COMMANDS = [
   {
     name: 'help',
     message: 'ℹ️  Show help screen',
-    hint: 'howl help',
+    hint: 'code-config help',
     action: help
   },
   {
     name: 'eslint',
     message: '🧹 Create ESLint configuration',
-    hint: 'howl eslint',
+    hint: 'code-config eslint',
     action: eslint
   },
   {
     name: 'stylelint',
     message: '🎨 Create Stylelint configuration',
-    hint: 'howl stylelint',
+    hint: 'code-config stylelint',
     action: stylelint
   }
 ]
 
+function askCoreCommands() {
+  console.log()
+  return prompt([
+    {
+      type: 'autocomplete',
+      name: 'coreCommands',
+      message: 'What do you want to do?',
+      choices: [...CORE_COMMANDS]
+    }
+  ])
+}
+
 async function init(params) {
-  const all = await askCoreCommands(CORE_COMMANDS)
+  const all = await askCoreCommands()
   const { coreCommands } = all
   const command = CORE_COMMANDS.find(({ name }) => coreCommands === name)
 

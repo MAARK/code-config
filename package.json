@@ -1,6 +1,6 @@
 {
   "name": "@maarkllc/code-config",
-  "version": "1.1.0",
+  "version": "2.0.0",
   "description": "Collection of linter configurations and tools to enforce consistent code style and format according to Maark's recommendations.",
   "author": "Maark, LLC",
   "license": "ISC",
@@ -12,11 +12,11 @@
     "url": "https://github.com/MAARK/code-config/issues"
   },
   "bin": {
-    "howl": "lib/index.js"
+    "code-config": "lib/index.js"
   },
   "scripts": {
     "start": "npm run build && node lib/index.js",
-    "build": "esbuild src/index.js --bundle --minify --platform=node --outfile=lib/index.js --target=node12",
+    "build": "esbuild src/index.js --bundle --minify --platform=node --outfile=lib/index.js --target=node14",
     "watch": "npm run build -- --watch",
     "lint": "eslint '**/*.js'",
     "test": "concurrently -c 'cyan,yellow,green' npm:test:*",
@@ -29,6 +29,7 @@
     "esbuild": "^0.17.11",
     "eslint": "^8.35.0",
     "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-airbnb-base": "^15.0.0",
     "eslint-config-prettier": "^8.7.0",
     "eslint-import-resolver-alias": "^1.1.2",
     "eslint-plugin-prettier": "^4.2.1",
