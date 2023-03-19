@@ -1,29 +1,10 @@
 import { prompt } from 'enquirer'
 import { actionText } from 'src/utils/log-style'
-import eslint from 'src/app/eslint'
-import help from 'src/app/help'
-import stylelint from 'src/app/stylelint'
+import help, { helpPrompt } from 'src/app/help'
+import eslint, { eslintPrompt } from 'src/app/eslint'
+import stylelint, { stylelintPrompt } from 'src/app/stylelint'
 
-const CORE_COMMANDS = [
-  {
-    name: 'help',
-    message: 'ℹ️  Show help screen',
-    hint: 'code-config help',
-    action: help
-  },
-  {
-    name: 'eslint',
-    message: '🧹 Create ESLint configuration',
-    hint: 'code-config eslint',
-    action: eslint
-  },
-  {
-    name: 'stylelint',
-    message: '🎨 Create Stylelint configuration',
-    hint: 'code-config stylelint',
-    action: stylelint
-  }
-]
+const CORE_COMMANDS = [helpPrompt, eslintPrompt, stylelintPrompt]
 
 function askCoreCommands() {
   console.log()

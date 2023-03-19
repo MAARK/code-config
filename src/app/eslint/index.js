@@ -48,7 +48,14 @@ export function eslintDoc() {
       'eslint'
     )}\t\t- Load ESLint configuration following Maark's guidelines`
   )
-  console.log(`\n\t\t\t  ${dim('e.g. code-config eslint')}`)
+  console.log(`\n\t\t\t  ${dim('code-config eslint')}`)
+}
+
+export const eslintPrompt = {
+  name: 'eslint',
+  message: '🧹 Create ESLint configuration',
+  hint: 'code-config eslint',
+  action: eslint
 }
 
 export default eslint

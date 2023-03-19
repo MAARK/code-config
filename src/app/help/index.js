@@ -21,20 +21,29 @@ function synopsis() {
   console.log('\tcode-config [command]')
 }
 
+function helpDoc() {
+  console.log(`\n\t${actionText('help')}\t\t- Show this help screen`)
+  console.log(`\n\t\t\t  ${dim('code-config help')}`)
+}
+
 function help() {
   header()
   synopsis()
 
   console.log('\nAvailable commands:')
 
-  // Help
-  console.log(`\n\t${actionText('help')}\t\t- Show this help screen`)
-  console.log(`\n\t\t\t  ${dim('code-config help')}`)
-
+  helpDoc()
   eslintDoc()
   stylelintDoc()
 
   console.log()
+}
+
+export const helpPrompt = {
+  name: 'help',
+  message: 'ℹ️  Show help screen',
+  hint: 'code-config help',
+  action: help
 }
 
 export default help

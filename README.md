@@ -8,36 +8,71 @@
 [badge-ci]: https://circleci.com/gh/MAARK/code-config.svg?style=shield
 [CircleCI]: https://app.circleci.com/pipelines/github/MAARK/code-config
 
-Collection of linter configurations and tools to enforce consistent code style
-and format according to Maark's recommendations.
+Collection of configurations to enforce consistent development guidelines
+using Maark's recommendations.
 
-## Usage
+To install a new configuration you can either use the CLI to handle everything
+automatically or do it manually.
 
-Directly using `npx`
+## Using the CLI with `npx`
 
-```shell
-npx @maarkllc/code-config eslint
+```bash
+npx @maarkllc/code-config
 ```
 
-Or you can install the `code-config` CLI globally
+This will guide you through a few steps that will ultimately install the desired
+configuration. That's it, happy coding!
 
-```shell
+## Installing the CLI globally
+
+Alternatively, you can install the `code-config` CLI globally and use it
+like so:
+
+```bash
 npm i -g @maarkllc/code-config
 
-code-config eslint
+code-config
 ```
 
-## Available commands
+### Available commands
 
-* `eslint` To install an ESLint configuration
-* `stylelint` To install a Stylelint configuration
+If you want to skip the first step you can pass the command as a parameter.
+This is optional because if you don't pass anything, the CLI will ask you what
+you want to execute.
+
+```bash
+code-config [command]
+```
+
+* `eslint` To install an ESLint configuration.
+* `stylelint` To install a Stylelint configuration.
+* `help` Shows the help screen.
+
+e.g.
+```bash
+code-config eslint
+
+// or
+
+npx @maarkllc/code-config stylelint
+```
+
+## Installing configurations manually
+
+All configurations are inside the `configs/` folder, categorized by tool.
+Each tool has a `README.md` file that explains how to manually install it.
+
+* [Instructions for ESlint](./configs/eslint/README.md)
+* [Instructions for Stylelint](./configs/stylelint/README.md)
 
 ## Supported configurations by linter
 
 The idea is to have a structure of configurations that extend from each other
 as needed depending on the project stack, it is important to define rules to be
 able to identify anti-patterns and code-smells for specific known libraries.
-[This diagram][diagram] helps illustrate the possible configurations:
+[This diagram][diagram] helps illustrate the possible configurations and how
+it can scale in the future to include other tools of trade for bundling or
+unit testing:
 
 ```mermaid
 %%{init: {'theme':'base'}}%%
@@ -46,13 +81,21 @@ graph TD
         L1[Available]:::available --> L2[Not ready]
     end
 
-    A[eslint/js/base]:::available ---> B[eslint/js/react]:::available
-    A --> eslint/js/vue
-    A --> eslint/js/angular
-    B --> eslint/js/next
+    A[ESLint]:::available --> B[JavaScript]:::available
+    B --> C[js/base]:::available
+    C --> D[js/react]:::available
+    C --> js/vue
+    C --> js/angular
+    D --> js/next
 
-    eslint/ts/base --> eslint/ts/angular
-    C[stylelint/css/base]:::available --> stylelint/scss/base:::available
+    A --> E[Typescript]
+
+    F[Stylelint]:::available --> G[CSS]:::available
+    F --> H[SCSS]:::available
+    G --> css/base:::available
+    H --> scss/base:::available
+
+    Webpack
 
     classDef available stroke:#0B410E,fill:#94D1BE
 ```
@@ -80,4 +123,4 @@ For more information please refer to the [documentation].
 [Stylelint]: https://stylelint.io/
 [Airbnb]: https://github.com/airbnb/javascript
 
-[diagram]: https://mermaid.live/edit#pako:eNp1Uk1vwjAM_StRuIKgE5flgETX3tgu22ktB7d1S7c0qRIXDSH--0IDlI_Nhyh-fn62Ze95rgvkglcG2g37iFLFnNku88AKK1SFB4-2CpLlFmoJmcS1EALODptMFmz1lLxpYgah2K190iXbv8sErawVTb_sNAP7oOFEwiuKU8rphnOS6csNvG33TwBU1UkwPhjeBRX-UKpOfXqUfFvXRLpTeUks7ST2sdz-PcaCDRx7Jt2O4cVyCdZGWLIh25LR3yhGs3AezOJxWUspRs_zKAhjPuYNmgbqwm1sf1RIOW2wwZQL9z0WSXmqDo4HHen3ncq5INPhmHdtAYRRDW6vDRclSOvQFtSn1oPvWXFRkzYXEHv31d9Jfy6HX_JNuoQ
+[diagram]: https://mermaid.live/edit#pako:eNp1klFrwjAUhf9Kia_KdPiyPAzUVmV0e6kwWOrDbXvVzjQtSSor4n9fmqzKZpeHkHvOd5MTuGeSlhkSSvYSqoO38WPhmaXqxAkh7lFkTmxXOGGzE-QcEo5bSil0hTcaPXvhI3srtScRsmbrmq7dbp-xIApzoe975-zFCFEq8-q36xrnFlqwT_WQgMIeYmEJvyVMgFT_ixjgVP9VQOxrDtKpfqcK_NKx-IluxYBtmgqVi9lZSxbphiPv_diKLaKoJ8zSumsW9dsra6fK_ffeX1tf9QMOecekgvTYlSkHpXzcebd8SsvyiHQwnk8n42C4yzmng6epP5kHZEgKlAXkmZmOc3tDTPQBC4wJNcf2zZjE4mI4qHUZNSIlVMsah6SuMtDo52BmqCB0B1wZtQLxUZa32lFBlutSXkW05aubSTual2_O6dT3

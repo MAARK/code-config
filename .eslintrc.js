@@ -4,7 +4,7 @@ module.exports = {
       node: {
         moduleDirectory: ['./node_modules', './']
       },
-      // For template files (templates/../t_<name>)
+      // For template files
       alias: [['@maarkllc/code-config', './']]
     }
   },

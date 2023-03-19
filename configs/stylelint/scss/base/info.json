@@ -3,7 +3,7 @@
   "hint": "Base rules for SCSS. Extends from css/base",
   "devDependencies": {
     "@maarkllc/code-config": "^2.0.0",
-    "stylelint": "15.2.0",
-    "stylelint-config-standard-scss": "7.0.1"
+    "stylelint": "^15.2.0",
+    "stylelint-config-standard-scss": "^7.0.1"
   }
 }

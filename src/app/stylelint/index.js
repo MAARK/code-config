@@ -46,7 +46,14 @@ export function stylelintDoc() {
       'stylelint'
     )}\t- Load Stylelint configuration following Maark's guidelines`
   )
-  console.log(`\n\t\t\t  ${dim('e.g. code-config stylelint')}`)
+  console.log(`\n\t\t\t  ${dim('code-config stylelint')}`)
+}
+
+export const stylelintPrompt = {
+  name: 'stylelint',
+  message: '🎨 Create Stylelint configuration',
+  hint: 'code-config stylelint',
+  action: stylelint
 }
 
 export default stylelint
