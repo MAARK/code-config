@@ -67,7 +67,7 @@ export default {
 
 And that's it, a new command `example` is created.
 
-## Scripts
+## `package.json` scripts
 
 They can be separated into 2 categories.
 
