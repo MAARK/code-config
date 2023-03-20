@@ -65,7 +65,7 @@ Each tool explains how to install it manually.
 * [Instructions for ESlint](./configs/eslint/index.md)
 * [Instructions for Stylelint](./configs/stylelint/index.md)
 
-## Supported configurations by linter
+## Supported configurations
 
 The idea is to have a structure of configurations that extend from each other
 as needed depending on the project stack, it is important to define rules to be
