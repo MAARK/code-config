@@ -1,19 +1,8 @@
 # Development
 
-The directory structure can be summarized this way:
+Summary of `src/` directory structure:
 
 ```
-├── configs                     <-- Where all the configurations are
-│   ├── eslint
-│   │   └── js
-│   │       ├── base
-│   │       └── react           <-- React's ESLint configuration folder
-│   │           ├── index.js    <-- Main lint configuration file
-|   |           |                   (the one that gets exported)
-│   │           ├── info.json   <-- Used by the CLI
-│   │           └── test.js     <-- Tests the lint configuration
-│   └── stylelint
-├── docs
 ├── src                         <-- CLI's code
 │   ├── app                     <-- Application core commands
 │   │   ├── eslint
@@ -21,18 +10,7 @@ The directory structure can be summarized this way:
 │   │   └── stylelint
 │   └── utils
 │   └── index.js                <-- CLI's entry point
-└── test                        <-- Scripts to test configurations
-    ├── mocks
-    └── utils
 ```
-
-## Configurations
-
-All the configurations are inside `./configs` and each one of them have at least 2 files:
-
-* `index.js` the entry point for the configuration, the one that gets exported when a user installs it.
-* `info.json` JSON object with relevant information for the CLI to work its magic.
-* `test.js` (optional) a code example where the lint configurations get tested.
 
 ## CLI source
 
@@ -68,7 +46,7 @@ export const examplePrompt = {
 export default example
 ```
 
-> ℹ️ `@maarkllc/code-config` uses [`enquirer`][enquirer] as dependency to prompt the user for information, in this case `examplePrompt` is a [Choice] object for the initial [AutoComplete] prompt when the CLI is called without any command.
+> ℹ️ `@maarkllc/code-config` uses [`enquirer`][enquirer] as a dependency to prompt the user for information, in this case `examplePrompt` is a [Choice] object for the initial [AutoComplete] prompt when the CLI is called without any command.
 
 Then we need to export the command in `src/app/index.js`:
 
@@ -86,6 +64,8 @@ export default {
   example
 }
 ```
+
+And that's it, a new command `example` is created.
 
 ## Scripts
 
