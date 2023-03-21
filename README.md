@@ -102,14 +102,14 @@ graph TD
 
 ### ESLint
 
-- `eslint/js/base`: It extends from [Airbnb] base configuration.
-- `eslint/js/react`: It extends from `eslint/js/base` and Airbnb full
+- `js/base`: It extends from [Airbnb] base configuration.
+- `js/react`: It extends from `js/base` and Airbnb full
   configuration and hooks rules.
 
 ### Stylelint
 
-- `stylelint/css/base`: It extends from `stylelint-config-standard`.
-- `stylelint/scss/base`: It extends from `stylelint/css/base` and
+- `css/base`: It extends from `stylelint-config-standard`.
+- `scss/base`: It extends from `css/base` and
   `stylelint-config-standard-scss`.
 
 ## Development

@@ -19,9 +19,7 @@ export function getLintChoices({ baseConfigPath }) {
 export function askLintChoices(choices) {
   const README = 'https://github.com/MAARK/code-config/blob/main/README.md'
 
-  console.log(
-    '\n⚠️  This action will overwrite existing Stylelint configuration files'
-  )
+  console.log('\n⚠️  This action will overwrite existing configuration files')
   console.log(`For more info: ${actionText(README)}\n`)
 
   return prompt([

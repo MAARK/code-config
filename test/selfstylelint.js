@@ -25,7 +25,9 @@ async function lint(stylelintPath) {
     files: [DEFAULT_PATTERNS]
   })
 
-  console.log(output)
+  if (output) {
+    console.log(output)
+  }
 }
 
 function lintAll() {
