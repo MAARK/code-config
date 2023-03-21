@@ -62,8 +62,8 @@ npx @maarkllc/code-config stylelint
 All configurations are inside the `configs/` folder, categorized by tool.
 Each tool explains how to install it manually.
 
-* [Instructions for ESlint](./configs/eslint/index.md)
-* [Instructions for Stylelint](./configs/stylelint/index.md)
+* [Instructions for ESlint](./configs/eslint/README.md)
+* [Instructions for Stylelint](./configs/stylelint/README.md)
 
 ## Supported configurations
 
@@ -116,7 +116,7 @@ graph TD
 
 For more information please refer to the [documentation].
 
-[documentation]: ./docs/index.md
+[documentation]: ./docs/README.md
 
 [ESLint]: https://eslint.org/
 [Prettier]: https://prettier.io/
