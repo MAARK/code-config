@@ -1,6 +1,6 @@
 {
   "name": "@maarkllc/code-config",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "Collection of configurations to enforce consistent development guidelines using Maark's recommendations.",
   "author": "Maark, LLC",
   "license": "ISC",
