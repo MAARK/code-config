@@ -23,3 +23,9 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 * Moves the existing configuration to the `configs/` folder.
 * Inverts the language and tool in the folder structure.
+
+## 2.0.1 (2023-03-23)
+
+### Added
+
+* Missing `main` property in package.json to execute CLI
