@@ -29,3 +29,9 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 
 * Missing `main` property in package.json to execute CLI
+
+## 2.0.2 (2023-03-23)
+
+### Updated
+
+* Execute build before the tests in CI
