@@ -9,7 +9,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 * Initial proposal.
 
-## 2.0.0 (2023-03-24)
+## 2.0.0 (2023-03-23)
 
 ### Added
 
@@ -21,5 +21,5 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Updates
 
-* Moves the existing configuration to `config/` folder.
+* Moves the existing configuration to the `configs/` folder.
 * Inverts the language and tool in the folder structure.
