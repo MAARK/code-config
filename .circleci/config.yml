@@ -23,7 +23,7 @@ jobs:
                   paths: .
             - attach_workspace:
                   at: ~/repo
-            - run: npm run test
+            - run: npm run build && npm run test
             - store_test_results:
                   path: test-log
             - store_artifacts:
