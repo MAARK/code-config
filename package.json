@@ -1,7 +1,7 @@
 {
   "name": "@maarkllc/code-config",
-  "version": "1.0.0",
-  "description": "Collection of linter configurations and tools to enforce consistent code style and format according to Maark's recommendations.",
+  "version": "2.0.0",
+  "description": "Collection of configurations to enforce consistent development guidelines using Maark's recommendations.",
   "author": "Maark, LLC",
   "license": "ISC",
   "repository": {
@@ -11,28 +11,35 @@
   "bugs": {
     "url": "https://github.com/MAARK/code-config/issues"
   },
+  "bin": {
+    "code-config": "lib/index.js"
+  },
   "scripts": {
-    "test": "concurrently npm:test:*",
-    "fix": "concurrently 'npm:test:* -- {1}' -P -- --fix",
-    "test:eslint": "node ./test/eslint.js",
-    "test:stylelint": "node ./test/stylelint.js"
-  },
-  "peerDependencies": {
-    "eslint": "^8.18.0",
-    "eslint-config-airbnb": "^19.0.4",
-    "eslint-config-prettier": "^8.5.0",
-    "eslint-plugin-prettier": "^4.2.1",
-    "prettier": "^2.7.1",
-    "stylelint": "^14.9.1",
-    "stylelint-config-standard": "^26.0.0",
-    "stylelint-config-standard-scss": "^4.0.0"
-  },
-  "dependencies": {
-    "prop-types": "^15.8.1",
-    "react": "^18.2.0"
+    "start": "npm run build && node lib/index.js",
+    "build": "esbuild src/index.js --bundle --minify --platform=node --outfile=lib/index.js --target=node14",
+    "watch": "npm run build -- --watch",
+    "lint": "eslint '**/*.js'",
+    "test": "concurrently -c 'cyan,yellow,green' npm:test:*",
+    "fix": "concurrently -c 'cyan,yellow,green' 'npm:test:* -- {1}' -P -- --fix",
+    "test:eslint": "node ./test/selfeslint.js",
+    "test:stylelint": "node ./test/selfstylelint.js"
   },
   "devDependencies": {
-    "concurrently": "^7.2.2"
+    "concurrently": "^7.2.2",
+    "esbuild": "^0.17.11",
+    "eslint": "^8.35.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-prettier": "^8.7.0",
+    "eslint-import-resolver-alias": "^1.1.2",
+    "eslint-plugin-prettier": "^4.2.1",
+    "prettier": "^2.8.4",
+    "stylelint": "^15.2.0",
+    "stylelint-config-standard": "^30.0.1",
+    "stylelint-config-standard-scss": "^7.0.1"
+  },
+  "dependencies": {
+    "enquirer": "^2.3.6"
   },
   "engines": {
     "node": ">=16",

@@ -1,0 +1,9 @@
+{
+  "name": "css/base",
+  "hint": "Base rules for CSS",
+  "devDependencies": {
+    "@maarkllc/code-config": "^2.0.0",
+    "stylelint": "^15.2.0",
+    "stylelint-config-standard": "^30.0.1"
+  }
+}

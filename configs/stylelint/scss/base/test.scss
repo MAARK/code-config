@@ -1,0 +1,26 @@
+%placeholder {
+  color: green;
+}
+
+.selector {
+  display: block;
+  color: blue;
+  font-family: Helvetica, sans-serif;
+
+  &__module {
+    display: flex;
+    flex-direction: column;
+
+    &--modifier {
+      @extend %placeholder;
+
+      flex-direction: row;
+    }
+  }
+
+  &__anotherModule {
+    display: block;
+    color: red;
+    font-family: Helvetica, sans-serif;
+  }
+}
