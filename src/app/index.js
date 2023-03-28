@@ -3,8 +3,9 @@ import { actionText } from 'src/utils/log-style'
 import help, { helpPrompt } from 'src/app/help'
 import eslint, { eslintPrompt } from 'src/app/eslint'
 import stylelint, { stylelintPrompt } from 'src/app/stylelint'
+import githook, { githookPrompt } from 'src/app/githook'
 
-const CORE_COMMANDS = [helpPrompt, eslintPrompt, stylelintPrompt]
+const CORE_COMMANDS = [helpPrompt, eslintPrompt, stylelintPrompt, githookPrompt]
 
 function askCoreCommands() {
   console.log()
@@ -33,6 +34,7 @@ async function init(params) {
 export default {
   eslint,
   stylelint,
+  githook,
   help,
   init
 }

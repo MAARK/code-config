@@ -1,0 +1,4 @@
+#!/bin/sh
+
+# Run ESLint on staged files
+eslint --ignore-path .gitignore  "**/*.{js,jsx}"
