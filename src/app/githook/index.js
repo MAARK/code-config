@@ -2,11 +2,11 @@ import fs from 'fs'
 import path from 'path'
 import { actionText, dim } from 'src/utils/log-style'
 
-function copyFiles(eslintConfig) {
+function copyFiles() {
   const templates = path.join(__dirname, '../src/app/githook/templates')
-  const prettierPath = path.join(templates, 'pre-push')
+  const hookPath = path.join(templates, 'pre-push')
 
-  fs.copyFileSync(prettierPath, '.git/hooks/pre-push')
+  fs.copyFileSync(hookPath, '.git/hooks/pre-push')
 }
 
 async function githook() {
