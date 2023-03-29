@@ -31,3 +31,13 @@ export function askLintChoices(choices) {
     }
   ])
 }
+
+export function askHookChoices() {
+  return prompt([
+    {
+      type: 'confirm',
+      name: 'hookChoice',
+      message: 'Do you want to add Git hook configuration?'
+    }
+  ])
+}

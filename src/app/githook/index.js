@@ -9,7 +9,7 @@ function copyFiles() {
   fs.copyFileSync(hookPath, '.git/hooks/pre-push')
 }
 
-async function githook() {
+export async function githook() {
   copyFiles()
 }
 
