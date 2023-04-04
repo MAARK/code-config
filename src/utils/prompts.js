@@ -32,12 +32,35 @@ export function askLintChoices(choices) {
   ])
 }
 
-export function askHookChoices() {
+export function askHookConfirmation() {
   return prompt([
     {
       type: 'confirm',
       name: 'hookChoice',
       message: 'Do you want to add Git hook configuration?'
+    }
+  ])
+}
+
+export function getHookChoices({ folderPath }) {
+  const choices = fs.readdirSync(folderPath)
+
+  return choices
+}
+
+export function askHookChoices(choices) {
+  console.log('\n⚠️  This action will overwrite existing configuration files', {
+    choices
+  })
+
+  return prompt([
+    {
+      type: 'autocomplete',
+      name: 'hookChoice',
+      message:
+        'Which configuration do you want to install? (select multiple with spacebar)',
+      multiple: true,
+      choices
     }
   ])
 }
