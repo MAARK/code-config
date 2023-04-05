@@ -6,8 +6,12 @@ import {
   installDependencies
 } from 'src/utils/npm'
 import { actionText, dim } from 'src/utils/log-style'
-import { askLintChoices, getLintChoices, askHookConfirmation } from 'src/utils/prompts'
-import { githook } from 'src/app/githook/index'
+import {
+  askLintChoices,
+  getLintChoices,
+  askHookConfirmation
+} from 'src/utils/prompts'
+import githook from 'src/app/githook/index'
 
 function copyFiles(eslintConfig) {
   const templates = path.join(__dirname, '../src/app/eslint/templates')

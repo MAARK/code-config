@@ -11,7 +11,7 @@ import {
   getLintChoices,
   askHookConfirmation
 } from 'src/utils/prompts'
-import { githook } from 'src/app/githook/index'
+import githook from 'src/app/githook/index'
 
 function copyFiles(eslintConfig) {
   const templates = path.join(__dirname, '../src/app/stylelint/templates')

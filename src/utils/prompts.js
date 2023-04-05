@@ -49,9 +49,7 @@ export function getHookChoices({ folderPath }) {
 }
 
 export function askHookChoices(choices) {
-  console.log('\n⚠️  This action will overwrite existing configuration files', {
-    choices
-  })
+  console.log('\n⚠️  This action will overwrite existing configuration files')
 
   return prompt([
     {
