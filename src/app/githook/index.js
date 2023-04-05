@@ -4,14 +4,7 @@ import { actionText, dim } from 'src/utils/log-style'
 import { askHookChoices, getHookChoices } from 'src/utils/prompts'
 
 function haveOptions(array) {
-  if (!Array.isArray(array)) {
-    return false
-  }
-
-  if (array.length !== 0 && array[0] !== undefined) {
-    return true
-  }
-  return false
+  return array && array.length && array[0]
 }
 
 function copyFiles(options) {
