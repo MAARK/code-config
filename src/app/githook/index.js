@@ -24,7 +24,7 @@ function copyFiles(options) {
   })
 }
 
-export async function githook(defaultOption) {
+async function githook(defaultOption) {
   let options = []
 
   if (!haveOptions(defaultOption)) {
