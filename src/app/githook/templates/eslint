@@ -1,0 +1,2 @@
+# Run ESLint on staged files
+npm run code-config:lint

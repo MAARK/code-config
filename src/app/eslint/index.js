@@ -6,7 +6,8 @@ import {
   installDependencies
 } from 'src/utils/npm'
 import { actionText, dim } from 'src/utils/log-style'
-import { askLintChoices, getLintChoices } from 'src/utils/prompts'
+import { askLintChoices, getLintChoices, askHookConfirmation } from 'src/utils/prompts'
+import { githook } from 'src/app/githook/index'
 
 function copyFiles(eslintConfig) {
   const templates = path.join(__dirname, '../src/app/eslint/templates')
@@ -29,6 +30,12 @@ async function eslint() {
   const choice = eslintChoices.find(
     (eslintChoice) => eslintChoice.name === lintChoice
   )
+
+  const { hookChoice } = await askHookConfirmation()
+
+  if (hookChoice) {
+    githook(['eslint'])
+  }
 
   await createPackageJson()
 

@@ -6,7 +6,12 @@ import {
   createPackageJson,
   installDependencies
 } from 'src/utils/npm'
-import { askLintChoices, getLintChoices } from 'src/utils/prompts'
+import {
+  askLintChoices,
+  getLintChoices,
+  askHookConfirmation
+} from 'src/utils/prompts'
+import { githook } from 'src/app/githook/index'
 
 function copyFiles(eslintConfig) {
   const templates = path.join(__dirname, '../src/app/stylelint/templates')
@@ -27,6 +32,11 @@ async function stylelint() {
   const choice = stylelintChoices.find(
     (stylelintChoice) => stylelintChoice.name === lintChoice
   )
+  const { hookChoice } = await askHookConfirmation()
+
+  if (hookChoice) {
+    githook(['stylelint'])
+  }
 
   await createPackageJson()
 
