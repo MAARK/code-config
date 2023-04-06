@@ -1,0 +1,2 @@
+# Run stylelint on staged files
+stylelint '**/*.{css,scss}'

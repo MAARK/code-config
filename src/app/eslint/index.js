@@ -37,10 +37,6 @@ async function eslint() {
 
   const { hookChoice } = await askHookConfirmation()
 
-  if (hookChoice) {
-    githook(['eslint'])
-  }
-
   await createPackageJson()
 
   await installDependencies(choice.devDependencies)
@@ -51,6 +47,10 @@ async function eslint() {
     'code-config:lint': "eslint '**/*.js'",
     'code-config:lint-fix': "eslint '**/*.js' --fix"
   })
+
+  if (hookChoice) {
+    githook(['eslint'])
+  }
 }
 
 export function eslintDoc() {

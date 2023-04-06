@@ -34,10 +34,6 @@ async function stylelint() {
   )
   const { hookChoice } = await askHookConfirmation()
 
-  if (hookChoice) {
-    githook(['stylelint'])
-  }
-
   await createPackageJson()
 
   await installDependencies(choice.devDependencies)
@@ -48,6 +44,11 @@ async function stylelint() {
     'code-config:stylelint': "stylelint '**/*.{css,scss}'",
     'code-config:stylelint-fix': "stylelint '**/*.{css,scss}' --fix"
   })
+
+  if (hookChoice) {
+    githook(['stylelint'])
+  }
+
 }
 
 export function stylelintDoc() {
