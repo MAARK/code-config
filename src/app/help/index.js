@@ -1,6 +1,7 @@
 import { actionText, dim } from 'src/utils/log-style'
 import { eslintDoc } from 'src/app/eslint'
 import { stylelintDoc } from 'src/app/stylelint'
+import { githookDoc } from 'src/app/githook'
 
 function header() {
   console.log(`\n           .${actionText('\tCode-config CLI')}`)
@@ -35,6 +36,7 @@ function help() {
   helpDoc()
   eslintDoc()
   stylelintDoc()
+  githookDoc()
 
   console.log()
 }

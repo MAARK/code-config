@@ -11,7 +11,7 @@ function haveOptions(array) {
 
 function copyFiles(options) {
   const destiationPath = '.git/hooks/pre-push'
-  const hookPath = path.join(__dirname, '../src/app/githook/pre-push')
+  const hookPath = path.join(__dirname, '../src/app/githook/templates/pre-push')
   let templates = ''
   let optionPath = ''
   let fileContent = ''
