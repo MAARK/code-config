@@ -1,7 +1,7 @@
 import fs from 'fs'
 import { spawn } from 'child_process'
 import { dim } from './log-style'
-import { readJsonFile, writeJsonFile } from './file-system'
+import { readJsonFile, writeJsonFile, readFile } from './file-system'
 
 export function runCommand({ command, path, silent, pipeError }) {
   return new Promise((resolve) => {
@@ -36,6 +36,12 @@ export async function createPackageJson() {
       command: 'npm init -y'
     })
   }
+}
+
+export function checkCodeConfigScripts(scripts = 'code-config:') {
+  const fileContent = readFile({ filepath: 'package.json' })
+
+  return fileContent.includes(scripts)
 }
 
 export function addScripts(scripts) {

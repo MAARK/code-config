@@ -46,6 +46,7 @@ code-config [command]
 
 * `eslint` To install an ESLint configuration.
 * `stylelint` To install a Stylelint configuration.
+* `githook` To install a ESLint and Stylelint Git Hook commands.
 * `help` Shows the help screen.
 
 e.g.
@@ -112,6 +113,12 @@ graph TD
 - `scss/base`: It extends from `css/base` and
   `stylelint-config-standard-scss`.
 
+### GitHook
+
+Multi select (choose with spacebar one or more) between:
+- `eslint`: to add hook to validate eslint.
+- `stylelint`: to add hook to validate Stylelint.
+
 ## Development
 
 For more information please refer to the [documentation].
@@ -122,5 +129,6 @@ For more information please refer to the [documentation].
 [Prettier]: https://prettier.io/
 [Stylelint]: https://stylelint.io/
 [Airbnb]: https://github.com/airbnb/javascript
+[GitHooks]: https://git-scm.com/book/en/v2/Customizing-Git-Git-Hooks
 
 [diagram]: https://mermaid.live/edit#pako:eNp1klFrwjAUhf9Kia_KdPiyPAzUVmV0e6kwWOrDbXvVzjQtSSor4n9fmqzKZpeHkHvOd5MTuGeSlhkSSvYSqoO38WPhmaXqxAkh7lFkTmxXOGGzE-QcEo5bSil0hTcaPXvhI3srtScRsmbrmq7dbp-xIApzoe975-zFCFEq8-q36xrnFlqwT_WQgMIeYmEJvyVMgFT_ixjgVP9VQOxrDtKpfqcK_NKx-IluxYBtmgqVi9lZSxbphiPv_diKLaKoJ8zSumsW9dsra6fK_ffeX1tf9QMOecekgvTYlSkHpXzcebd8SsvyiHQwnk8n42C4yzmng6epP5kHZEgKlAXkmZmOc3tDTPQBC4wJNcf2zZjE4mI4qHUZNSIlVMsah6SuMtDo52BmqCB0B1wZtQLxUZa32lFBlutSXkW05aubSTual2_O6dT3
