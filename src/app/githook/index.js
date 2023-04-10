@@ -12,16 +12,22 @@ function copyFiles(options) {
   const hookPath = path.join(__dirname, '../src/app/githook/pre-push')
   let optionPath = ''
 
-  fs.copyFileSync(hookPath, '.git/hooks/pre-push')
+  if (!fs.existsSync('.git')) {
+    console.log('\n ⚠️  Git directory not found. ⚠️')
+    console.log(' ‼️  Aborted command ‼️')
+  } else {
+    fs.copyFileSync(hookPath, '.git/hooks/pre-push')
 
-  const writer = fs.createWriteStream('.git/hooks/pre-push', { flags: 'a' })
-  // Read and display the file data on console
-  options.hookChoice.forEach((option) => {
-    optionPath = path.join(templates, option)
-    fs.readFile(optionPath, 'utf8', (err, data) => {
-      writer.write(data)
+    const writer = fs.createWriteStream('.git/hooks/pre-push', { flags: 'a' })
+    // Read and display the file data on console
+    options.hookChoice.forEach((option) => {
+      optionPath = path.join(templates, option)
+      fs.readFile(optionPath, 'utf8', (err, data) => {
+        writer.write(data)
+      })
     })
-  })
+    console.log(`\n  Added githook file! `)
+  }
 }
 
 async function githook(defaultOption) {
@@ -36,8 +42,6 @@ async function githook(defaultOption) {
   }
 
   copyFiles(options)
-
-  console.log(`\n  Added githook file! `)
 }
 
 export function githookDoc() {

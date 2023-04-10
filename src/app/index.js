@@ -4,6 +4,7 @@ import help, { helpPrompt } from 'src/app/help'
 import eslint, { eslintPrompt } from 'src/app/eslint'
 import stylelint, { stylelintPrompt } from 'src/app/stylelint'
 import githook, { githookPrompt } from 'src/app/githook'
+import gobravely from 'src/app/gobravely'
 
 const CORE_COMMANDS = [helpPrompt, eslintPrompt, stylelintPrompt, githookPrompt]
 
@@ -36,5 +37,6 @@ export default {
   stylelint,
   githook,
   help,
+  gobravely,
   init
 }
