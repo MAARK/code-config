@@ -1,20 +1,33 @@
 import fs from 'fs'
 import path from 'path'
 import { actionText, dim } from 'src/utils/log-style'
-import { askHookChoices, getHookChoices } from 'src/utils/prompts'
+import {
+  askHookChoices,
+  getHookChoices,
+  askCustomGitFolderPath
+} from 'src/utils/prompts'
 import { checkCodeConfigScripts } from 'src/utils/npm'
-
 
 function haveOptions(array) {
   return array && array.length && array[0]
 }
 
-function copyFiles(options) {
-  const destiationPath = '.git/hooks/pre-push'
+async function copyFiles(options) {
+  const destiationPathDefault = '.git/'
+  const prepushPath = 'hooks/pre-push'
   const hookPath = path.join(__dirname, '../src/app/githook/templates/pre-push')
+  let customPath = ''
+  let destiationPath = ''
   let templates = ''
   let optionPath = ''
   let fileContent = ''
+
+  customPath = await askCustomGitFolderPath()
+  if (customPath.gitPath === '') {
+    destiationPath = destiationPathDefault + prepushPath
+  } else {
+    destiationPath = customPath.gitPath + prepushPath
+  }
 
   if (checkCodeConfigScripts()) {
     console.log('code-config scripts detected')
@@ -24,7 +37,7 @@ function copyFiles(options) {
     templates = path.join(__dirname, '../src/app/githook/templates/generic')
   }
 
-  if (!fs.existsSync('.git')) {
+  if (!fs.existsSync(customPath.gitPath)) {
     console.log('\n ⚠️  Git directory not found. ⚠️')
     console.log(' ‼️  Aborted command ‼️')
   } else {
@@ -57,7 +70,10 @@ async function githook(defaultOption) {
   let options = []
 
   if (!haveOptions(defaultOption)) {
-    const folderPath = path.join(__dirname, '../src/app/githook/templates/code-config')
+    const folderPath = path.join(
+      __dirname,
+      '../src/app/githook/templates/code-config'
+    )
     const hookChoices = await getHookChoices({ folderPath })
     options = await askHookChoices(hookChoices)
   } else {
