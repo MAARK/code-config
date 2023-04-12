@@ -4,7 +4,6 @@ import { actionText, dim } from 'src/utils/log-style'
 import { askHookChoices, getHookChoices } from 'src/utils/prompts'
 import { checkCodeConfigScripts } from 'src/utils/npm'
 
-
 function haveOptions(array) {
   return array && array.length && array[0]
 }
@@ -30,6 +29,11 @@ function copyFiles(options) {
   } else {
     if (!fs.existsSync(destiationPath)) {
       fs.copyFileSync(hookPath, destiationPath)
+      try {
+        fs.chmodSync(destiationPath, 0o754)
+      } catch (error) {
+        console.log(error)
+      }
       console.log(`Added githook file!`)
     }
 
@@ -57,7 +61,10 @@ async function githook(defaultOption) {
   let options = []
 
   if (!haveOptions(defaultOption)) {
-    const folderPath = path.join(__dirname, '../src/app/githook/templates/code-config')
+    const folderPath = path.join(
+      __dirname,
+      '../src/app/githook/templates/code-config'
+    )
     const hookChoices = await getHookChoices({ folderPath })
     options = await askHookChoices(hookChoices)
   } else {
