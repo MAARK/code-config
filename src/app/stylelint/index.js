@@ -48,7 +48,6 @@ async function stylelint() {
   if (hookChoice) {
     githook(['stylelint'])
   }
-
 }
 
 export function stylelintDoc() {

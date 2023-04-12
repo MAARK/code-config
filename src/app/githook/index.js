@@ -43,6 +43,11 @@ function copyFiles(options) {
   } else {
     if (!fs.existsSync(destiationPath)) {
       fs.copyFileSync(hookPath, destiationPath)
+      try {
+        fs.chmodSync(destiationPath, 0o754)
+      } catch (error) {
+        console.log(error)
+      }
       console.log(`Added githook file!`)
     }
 
