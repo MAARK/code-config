@@ -62,11 +62,3 @@ export function askHookChoices(choices) {
     }
   ])
 }
-
-export function askCustomGitFolderPath() {
-  return prompt({
-    type: 'input',
-    name: 'gitPath',
-    message: 'Add .git folder path (.git/):'
-  })
-}

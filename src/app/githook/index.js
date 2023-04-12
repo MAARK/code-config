@@ -12,21 +12,20 @@ function haveOptions(array) {
   return array && array.length && array[0]
 }
 
-async function copyFiles(options) {
+function copyFiles(options) {
   const destiationPathDefault = '.git/'
   const prepushPath = 'hooks/pre-push'
   const hookPath = path.join(__dirname, '../src/app/githook/templates/pre-push')
-  let customPath = ''
-  let destiationPath = ''
+  const maxFolderStep = 2
+  let destiationPath = destiationPathDefault + prepushPath
   let templates = ''
   let optionPath = ''
   let fileContent = ''
+  let folderStep = 0
 
-  customPath = await askCustomGitFolderPath()
-  if (customPath.gitPath === '') {
-    destiationPath = destiationPathDefault + prepushPath
-  } else {
-    destiationPath = customPath.gitPath + prepushPath
+  while (!fs.existsSync(destiationPath) && folderStep < maxFolderStep) {
+    destiationPath = `../${destiationPath}`
+    folderStep++
   }
 
   if (checkCodeConfigScripts()) {
@@ -37,8 +36,9 @@ async function copyFiles(options) {
     templates = path.join(__dirname, '../src/app/githook/templates/generic')
   }
 
-  if (!fs.existsSync(customPath.gitPath)) {
-    console.log('\n ⚠️  Git directory not found. ⚠️')
+  if (!fs.existsSync(destiationPath)) {
+    console.log(`\n ⚠️  Git directory not found. ⚠️`)
+    console.log(` Analized ${folderStep} folders up this folder 📁`)
     console.log(' ‼️  Aborted command ‼️')
   } else {
     if (!fs.existsSync(destiationPath)) {
