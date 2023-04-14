@@ -1,7 +1,11 @@
 import fs from 'fs'
 import path from 'path'
 import { actionText, dim } from 'src/utils/log-style'
-import { askHookChoices, getHookChoices } from 'src/utils/prompts'
+import {
+  askHookChoices,
+  getHookChoices,
+  askCustomGitFolderPath
+} from 'src/utils/prompts'
 import { checkCodeConfigScripts } from 'src/utils/npm'
 
 function haveOptions(array) {
