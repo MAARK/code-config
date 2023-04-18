@@ -1,0 +1,4 @@
+#!/bin/sh
+
+# Get the current branch name
+current_branch=$(git symbolic-ref --short HEAD)
