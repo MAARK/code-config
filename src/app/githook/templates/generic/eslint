@@ -1,14 +1,2 @@
-# Run ESLint on commited files
-# Get the current branch name
-current_branch=$(git symbolic-ref --short HEAD)
-
-# Check if the current branch has an upstream branch
-if [ -z "$(git rev-parse --abbrev-ref --symbolic-full-name "$current_branch@{upstream}" 2>/dev/null)" ]; then
-  echo "The branch '$current_branch' does not have an upstream branch."
-  # get the modified files comparing HEAD with the creation of the branch
-  eslint $(git diff --name-only HEAD $(git reflog show --no-abbrev $current_branch | tail -n 1 | awk '{print $1}') | grep -E '\.(js|jsx)$' | xargs)
-else
-  echo "The branch '$current_branch' has an upstream branch."
-  # get the modified files comparing with current branch origin can be used @{u}
-  eslint $(git diff --name-only origin/$current_branch | grep -E '\.(js|jsx)$' | xargs)
-fi
+# Run ESLint on staged files
+eslint --ignore-path .gitignore  "**/*.{js,jsx}"
