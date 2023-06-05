@@ -13,18 +13,24 @@ function haveOptions(array) {
 }
 
 function copyFiles(options) {
-  const destiationPathDefault = '.git/'
+  const gitPathDefault = '.git/'
   const prepushPath = 'hooks/pre-push'
   const hookPath = path.join(__dirname, '../src/app/githook/templates/pre-push')
   const maxFolderStep = 2
-  let destiationPath = destiationPathDefault + prepushPath
+  let gitPath = gitPathDefault
+  let destiationPath = gitPathDefault + prepushPath
   let templates = ''
   let optionPath = ''
   let fileContent = ''
   let folderStep = 0
 
-  while (!fs.existsSync(destiationPath) && folderStep < maxFolderStep) {
-    destiationPath = `../${destiationPath}`
+  while (!fs.existsSync(gitPath) && folderStep < maxFolderStep) {
+    console.log(
+      { gitPath },
+      !fs.existsSync(gitPath),
+      folderStep < maxFolderStep
+    )
+    gitPath = `../${gitPath}`
     folderStep++
   }
 
@@ -36,11 +42,12 @@ function copyFiles(options) {
     templates = path.join(__dirname, '../src/app/githook/templates/generic')
   }
 
-  if (!fs.existsSync(destiationPath)) {
+  if (!fs.existsSync(gitPath)) {
     console.log(`\n ⚠️  Git directory not found. ⚠️`)
     console.log(` Analized ${folderStep} folders up this folder 📁`)
     console.log(' ‼️  Aborted command ‼️')
   } else {
+    destiationPath = gitPath + prepushPath
     if (!fs.existsSync(destiationPath)) {
       fs.copyFileSync(hookPath, destiationPath)
       try {
