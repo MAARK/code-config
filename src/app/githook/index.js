@@ -62,7 +62,7 @@ function copyFiles(options) {
       } catch (error) {
         console.log(error)
       }
-      console.log(`Added githook file!`)
+      console.log(`Added githook file! 🎉`)
     }
 
     fs.readFile(destiationPath, 'utf8', (err, fileString) => {
