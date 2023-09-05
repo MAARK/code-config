@@ -4,7 +4,7 @@ import { actionText, dim } from 'src/utils/log-style'
 import {
   askHookChoices,
   getHookChoices,
-  askCustomGitFolderPath
+  askSmartLinting
 } from 'src/utils/prompts'
 import { checkCodeConfigScripts } from 'src/utils/npm'
 
@@ -15,8 +15,8 @@ function haveOptions(array) {
 function copyFiles(options) {
   const gitPathDefault = '.git/'
   const prepushPath = 'hooks/pre-push'
-  const hookPath = path.join(__dirname, '../src/app/githook/templates/pre-push')
   const maxFolderStep = 2
+  let hookPath = path.join(__dirname, '../src/app/githook/templates/pre-push')
   let gitPath = gitPathDefault
   let destiationPath = gitPathDefault + prepushPath
   let templates = ''
@@ -34,7 +34,14 @@ function copyFiles(options) {
     folderStep++
   }
 
-  if (checkCodeConfigScripts()) {
+  if (options.smartLinting) {
+    console.log('code-config smart linting')
+    templates = path.join(__dirname, '../src/app/githook/templates/smart')
+    hookPath = path.join(
+      __dirname,
+      '../src/app/githook/templates/pre-push-smart'
+    )
+  } else if (checkCodeConfigScripts()) {
     console.log('code-config scripts detected')
     templates = path.join(__dirname, '../src/app/githook/templates/code-config')
   } else {
@@ -55,7 +62,7 @@ function copyFiles(options) {
       } catch (error) {
         console.log(error)
       }
-      console.log(`Added githook file!`)
+      console.log(`Added githook file! 🎉`)
     }
 
     fs.readFile(destiationPath, 'utf8', (err, fileString) => {
@@ -80,6 +87,7 @@ function copyFiles(options) {
 
 async function githook(defaultOption) {
   let options = []
+  const smartLinting = await askSmartLinting()
 
   if (!haveOptions(defaultOption)) {
     const folderPath = path.join(
@@ -87,9 +95,16 @@ async function githook(defaultOption) {
       '../src/app/githook/templates/code-config'
     )
     const hookChoices = await getHookChoices({ folderPath })
-    options = await askHookChoices(hookChoices)
+    const selectedHookChoices = await askHookChoices(hookChoices)
+    options = {
+      hookChoice: selectedHookChoices.hookChoice,
+      smartLinting: smartLinting.smartLinting
+    }
   } else {
-    options = { hookChoice: defaultOption }
+    options = {
+      hookChoice: defaultOption,
+      smartLinting: smartLinting.smartLinting
+    }
   }
 
   copyFiles(options)

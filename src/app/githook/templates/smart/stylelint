@@ -1,0 +1,12 @@
+# Run stylelint on staged files
+
+# Check if the current branch has an upstream branch
+if [ -z "$(git rev-parse --abbrev-ref --symbolic-full-name "$current_branch@{upstream}" 2>/dev/null)" ]; then
+  echo "The branch '$current_branch' does not have an upstream branch."
+  # get the modified files comparing HEAD with the creation of the branch
+  stylelint $(git diff --name-only HEAD $(git reflog show --no-abbrev $current_branch | tail -n 1 | awk '{print $1}') | grep -E '\.(css|scss)$' | xargs)
+else
+  echo "The branch '$current_branch' has an upstream branch."
+  # get the modified files comparing with current branch origin can be used @{u}
+  stylelint $(git diff --name-only origin/$current_branch | grep -E '\.(css|scss)$' | xargs)
+fi

@@ -48,6 +48,16 @@ export function getHookChoices({ folderPath }) {
   return choices
 }
 
+export function askSmartLinting() {
+  return prompt([
+    {
+      type: 'confirm',
+      name: 'smartLinting',
+      message: 'Do you want to use smart linting?'
+    }
+  ])
+}
+
 export function askHookChoices(choices) {
   console.log('\n⚠️  This action will overwrite existing configuration files')
 
