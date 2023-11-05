@@ -3,13 +3,33 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
-## 1.0.0 (2022-07-11)
+## 2.1.0
+
+_2023-11-05_
 
 ### Added
 
-* Initial proposal.
+* `githook` core command to create a new Git hook configuration automatically.
 
-## 2.0.0 (2023-03-23)
+## 2.0.2
+
+_2023-03-23_
+
+### Changed
+
+* Execute build before the tests in CI
+
+## 2.0.1
+
+_2023-03-23_
+
+### Added
+
+* Missing `main` property in package.json to execute CLI
+
+## 2.0.0
+
+_2023-03-23_
 
 ### Added
 
@@ -19,19 +39,15 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 * Auto-install necessary dependencies when running commands.
 * Documentation.
 
-### Updates
+### Changed
 
 * Moves the existing configuration to the `configs/` folder.
 * Inverts the language and tool in the folder structure.
 
-## 2.0.1 (2023-03-23)
+## 1.0.0
+
+_2022-07-11_
 
 ### Added
 
-* Missing `main` property in package.json to execute CLI
-
-## 2.0.2 (2023-03-23)
-
-### Updated
-
-* Execute build before the tests in CI
+* Initial proposal.
