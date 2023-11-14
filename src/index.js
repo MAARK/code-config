@@ -12,4 +12,10 @@ async function startCLI() {
   }
 }
 
-startCLI().catch((error) => console.error(error.message))
+startCLI().catch((error) => {
+  if (error && error.message) {
+    console.error(error.message)
+  } else {
+    console.error('Unexpected error')
+  }
+})

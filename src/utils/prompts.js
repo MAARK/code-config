@@ -4,6 +4,18 @@ import fs from 'fs'
 import { actionText } from './log-style'
 import { getDirectories } from './file-system'
 
+export function askCoreCommands(choices) {
+  console.log()
+  return prompt([
+    {
+      type: 'autocomplete',
+      name: 'coreCommands',
+      message: 'What do you want to do?',
+      choices: [...choices]
+    }
+  ])
+}
+
 export function getLintChoices({ baseConfigPath }) {
   const configPaths = getDirectories(baseConfigPath).filter((configPath) => {
     const indexPath = path.join(configPath, 'info.json')
@@ -43,9 +55,7 @@ export function askHookConfirmation() {
 }
 
 export function getHookChoices({ folderPath }) {
-  const choices = fs.readdirSync(folderPath)
-
-  return choices
+  return fs.readdirSync(folderPath)
 }
 
 export function askSmartLinting() {

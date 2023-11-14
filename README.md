@@ -2,7 +2,7 @@
 
 [![badge][badge]][npm-repo] [![badge-ci][badge-ci]][CircleCI]
 
-[badge]: https://img.shields.io/badge/%40maarkllc%2Fcode--config-v2.0.2-blue
+[badge]: https://img.shields.io/badge/%40maarkllc%2Fcode--config-v2.1.0-blue
 [npm-repo]: https://www.npmjs.com/package/@maarkllc/code-config
 
 [badge-ci]: https://circleci.com/gh/MAARK/code-config.svg?style=shield
@@ -63,8 +63,8 @@ npx @maarkllc/code-config stylelint
 All configurations are inside the `configs/` folder, categorized by tool.
 Each tool explains how to install it manually.
 
-* [Instructions for ESlint](./configs/eslint/README.md)
-* [Instructions for Stylelint](./configs/stylelint/README.md)
+* [Instructions for ESLint](./configs/eslint/index.md)
+* [Instructions for Stylelint](./configs/stylelint/index.md)
 
 ## Supported configurations
 
@@ -123,7 +123,7 @@ Multi select (choose with spacebar one or more) between:
 
 For more information please refer to the [documentation].
 
-[documentation]: ./docs/README.md
+[documentation]: ./docs/index.md
 
 [ESLint]: https://eslint.org/
 [Prettier]: https://prettier.io/
