@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## 2.2.0
+
+_2024-11-05_
+
+### Updated
+
+* Dependencies upgraded
+* ESlint upgraded to version 9
+* Stylelint upgraded to version 16
+* Moved from CommonJS to ECMAScript modules as required by the upgrades
+
 ## 2.1.0
 
 _2023-11-05_
