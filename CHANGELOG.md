@@ -13,6 +13,7 @@ _2024-11-05_
 * ESlint upgraded to version 9
 * Stylelint upgraded to version 16
 * Moved from CommonJS to ECMAScript modules as required by the upgrades
+* README files
 
 ## 2.1.0
 
