@@ -19,28 +19,28 @@
     "start": "npm run build && node lib/index.js",
     "build": "esbuild src/index.js --bundle --minify --platform=node --outfile=lib/index.js --target=node14",
     "watch": "npm run build -- --watch",
-    "lint": "eslint '**/*.js'",
+    "lint": "eslint",
     "test": "concurrently -c 'cyan,yellow,green' npm:test:*",
     "fix": "concurrently -c 'cyan,yellow,green' 'npm:test:* -- {1}' -P -- --fix",
-    "test:eslint": "node ./test/selfeslint.js",
-    "test:stylelint": "node ./test/selfstylelint.js"
+    "test:eslint": "node ./test/selfeslint.mjs",
+    "test:stylelint": "node ./test/selfstylelint.mjs"
   },
   "devDependencies": {
-    "concurrently": "^7.2.2",
+    "@eslint/js": "^9.14.0",
+    "concurrently": "^9.1.0",
     "esbuild": "^0.24.0",
-    "eslint": "^8.35.0",
-    "eslint-config-airbnb": "^19.0.4",
-    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint": "^9.14.0",
     "eslint-config-prettier": "^9.1.0",
-    "eslint-import-resolver-alias": "^1.1.2",
     "eslint-plugin-prettier": "^5.2.1",
+    "eslint-plugin-react": "^7.37.2",
+    "globals": "^15.12.0",
     "prettier": "^3.3.3",
-    "stylelint": "^15.11.0",
-    "stylelint-config-standard": "^34.0.0",
-    "stylelint-config-standard-scss": "^11.1.0"
+    "stylelint": "^16.10.0",
+    "stylelint-config-standard": "^36.0.1",
+    "stylelint-config-standard-scss": "^13.1.0"
   },
   "dependencies": {
-    "enquirer": "^2.3.6"
+    "enquirer": "^2.4.1"
   },
   "engines": {
     "node": "22.10.0",

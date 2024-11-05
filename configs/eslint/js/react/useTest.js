@@ -1,7 +1,7 @@
 function useTest({ time }) {
   return {
     today: new Date(),
-    date: new Date(time)
+    date: new Date(time),
   }
 }
 

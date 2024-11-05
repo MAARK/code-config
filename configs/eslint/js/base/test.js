@@ -1,6 +1,6 @@
 const sample = {
   foo: 'bar',
-  bar: 'foo'
+  bar: 'foo',
 }
 
 const list = ['foo', 'bar']
