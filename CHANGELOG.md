@@ -15,6 +15,10 @@ _2024-11-05_
 * Moved from CommonJS to ECMAScript modules as required by the upgrades
 * README files
 
+### Removed
+
+* Airbnb ESLint configuration as it's no longer supported by ESLint 9
+
 ## 2.1.0
 
 _2023-11-05_
