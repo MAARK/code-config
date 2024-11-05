@@ -2,7 +2,7 @@ version: 2.1
 defaults: &defaults
     working_directory: ~/repo
     docker:
-        - image: cimg/node:18.4.0
+        - image: cimg/node:20.10.0
 jobs:
     run_tests:
         <<: *defaults
