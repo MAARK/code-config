@@ -7,7 +7,7 @@ example we're installing `js/base`.
 
 ```bash
 npm i --save-dev \
-  @maarkllc/code-config@9.14.0 \
+  @eslint/js@9.14.0 \
   @maarkllc/code-config \
   eslint@^9.14.0 \
   eslint-config-prettier@^9.1.0 \

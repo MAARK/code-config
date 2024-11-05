@@ -3,7 +3,6 @@
   "hint": "React rules. Extends from js/base",
   "devDependencies": {
     "@eslint/js": "^9.14.0",
-    "@maarkllc/code-config": "^2.0.2",
     "eslint": "^9.14.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-prettier": "^5.2.1",

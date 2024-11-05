@@ -56,7 +56,11 @@ export function addScripts(scripts) {
 }
 
 export async function installDependencies(dependencies) {
-  const parsedDependencies = Object.entries(dependencies)
+  const allDependencies = [
+    ['@maarkllc/code-config', 'latest'],
+    ...Object.entries(dependencies),
+  ]
+  const parsedDependencies = allDependencies
     .map(([name, version]) => `${name}@${version}`)
     .join(' ')
 
