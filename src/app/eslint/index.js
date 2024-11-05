@@ -3,13 +3,13 @@ import path from 'path'
 import {
   addScripts,
   createPackageJson,
-  installDependencies
+  installDependencies,
 } from 'src/utils/npm'
 import { actionText, dim } from 'src/utils/log-style'
 import {
   askLintChoices,
   getLintChoices,
-  askHookConfirmation
+  askHookConfirmation,
 } from 'src/utils/prompts'
 import githook from 'src/app/githook/index'
 
@@ -23,7 +23,7 @@ function copyFiles(eslintConfig) {
   fs.writeFileSync(
     '.eslintrc.js',
     eslintContent.replace('{config}', eslintConfig),
-    'utf8'
+    'utf8',
   )
 }
 
@@ -32,7 +32,7 @@ async function eslint() {
   const eslintChoices = getLintChoices({ baseConfigPath })
   const { lintChoice } = await askLintChoices(eslintChoices)
   const choice = eslintChoices.find(
-    (eslintChoice) => eslintChoice.name === lintChoice
+    (eslintChoice) => eslintChoice.name === lintChoice,
   )
 
   const { hookChoice } = await askHookConfirmation()
@@ -45,7 +45,7 @@ async function eslint() {
 
   addScripts({
     'code-config:lint': "eslint '**/*.js'",
-    'code-config:lint-fix': "eslint '**/*.js' --fix"
+    'code-config:lint-fix': "eslint '**/*.js' --fix",
   })
 
   if (hookChoice) {
@@ -56,8 +56,8 @@ async function eslint() {
 export function eslintDoc() {
   console.log(
     `\n\t${actionText(
-      'eslint'
-    )}\t\t- Load ESLint configuration following Maark's guidelines`
+      'eslint',
+    )}\t\t- Load ESLint configuration following Maark's guidelines`,
   )
   console.log(`\n\t\t\t  ${dim('code-config eslint')}`)
 }
@@ -66,7 +66,7 @@ export const eslintPrompt = {
   name: 'eslint',
   message: '🧹 Create ESLint configuration',
   hint: 'code-config eslint',
-  action: eslint
+  action: eslint,
 }
 
 export default eslint

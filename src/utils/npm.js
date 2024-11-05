@@ -13,7 +13,7 @@ export function runCommand({ command, path, silent, pipeError }) {
 
     const p = spawn(endCommand, {
       shell: true,
-      stdio: silent ? null : [0, 1, pipeError ? 'pipe' : 2]
+      stdio: silent ? null : [0, 1, pipeError ? 'pipe' : 2],
     })
 
     let errorOutput = ''
@@ -33,7 +33,7 @@ export function runCommand({ command, path, silent, pipeError }) {
 export async function createPackageJson() {
   if (!fs.existsSync('package.json')) {
     await runCommand({
-      command: 'npm init -y'
+      command: 'npm init -y',
     })
   }
 }
@@ -49,7 +49,7 @@ export function addScripts(scripts) {
 
   packageJson.scripts = {
     ...packageJson.scripts,
-    ...scripts
+    ...scripts,
   }
 
   writeJsonFile({ filepath: 'package.json', data: packageJson })
@@ -61,6 +61,6 @@ export async function installDependencies(dependencies) {
     .join(' ')
 
   await runCommand({
-    command: `npm i --save-dev ${parsedDependencies}`
+    command: `npm i --save-dev ${parsedDependencies}`,
   })
 }

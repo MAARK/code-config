@@ -45,7 +45,7 @@ export const helpPrompt = {
   name: 'help',
   message: 'ℹ️  Show help screen',
   hint: 'code-config help',
-  action: help
+  action: help,
 }
 
 export default help

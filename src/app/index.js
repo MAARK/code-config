@@ -25,5 +25,5 @@ export default {
   githook,
   help,
   gobravely,
-  init
+  init,
 }

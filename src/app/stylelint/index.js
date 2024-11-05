@@ -4,12 +4,12 @@ import { actionText, dim } from 'src/utils/log-style'
 import {
   addScripts,
   createPackageJson,
-  installDependencies
+  installDependencies,
 } from 'src/utils/npm'
 import {
   askLintChoices,
   getLintChoices,
-  askHookConfirmation
+  askHookConfirmation,
 } from 'src/utils/prompts'
 import githook from 'src/app/githook/index'
 
@@ -21,7 +21,7 @@ function copyFiles(eslintConfig) {
   fs.writeFileSync(
     '.stylelintrc.js',
     stylelintContent.replace('{config}', eslintConfig),
-    'utf8'
+    'utf8',
   )
 }
 
@@ -30,7 +30,7 @@ async function stylelint() {
   const stylelintChoices = getLintChoices({ baseConfigPath })
   const { lintChoice } = await askLintChoices(stylelintChoices)
   const choice = stylelintChoices.find(
-    (stylelintChoice) => stylelintChoice.name === lintChoice
+    (stylelintChoice) => stylelintChoice.name === lintChoice,
   )
   const { hookChoice } = await askHookConfirmation()
 
@@ -42,7 +42,7 @@ async function stylelint() {
 
   addScripts({
     'code-config:stylelint': "stylelint '**/*.{css,scss}'",
-    'code-config:stylelint-fix': "stylelint '**/*.{css,scss}' --fix"
+    'code-config:stylelint-fix': "stylelint '**/*.{css,scss}' --fix",
   })
 
   if (hookChoice) {
@@ -53,8 +53,8 @@ async function stylelint() {
 export function stylelintDoc() {
   console.log(
     `\n\t${actionText(
-      'stylelint'
-    )}\t- Load Stylelint configuration following Maark's guidelines`
+      'stylelint',
+    )}\t- Load Stylelint configuration following Maark's guidelines`,
   )
   console.log(`\n\t\t\t  ${dim('code-config stylelint')}`)
 }
@@ -63,7 +63,7 @@ export const stylelintPrompt = {
   name: 'stylelint',
   message: '🎨 Create Stylelint configuration',
   hint: 'code-config stylelint',
-  action: stylelint
+  action: stylelint,
 }
 
 export default stylelint

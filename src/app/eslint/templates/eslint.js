@@ -5,5 +5,5 @@ module.exports = {
   extends: ['./node_modules/@maarkllc/code-config/configs/eslint/{config}'],
   rules: {
     // Overwrite rules here
-  }
+  },
 }
