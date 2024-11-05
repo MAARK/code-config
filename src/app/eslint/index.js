@@ -19,10 +19,10 @@ function copyFiles(eslintConfig) {
   const prettierPath = path.join(templates, 'prettier.js')
   const eslintContent = fs.readFileSync(eslintPath, 'utf8')
 
-  fs.copyFileSync(prettierPath, '.prettierrc.js')
+  fs.copyFileSync(prettierPath, 'prettier.config.mjs')
   fs.writeFileSync(
-    '.eslintrc.js',
-    eslintContent.replace('{config}', eslintConfig),
+    'eslint.config.mjs',
+    eslintContent.replace('{config}', `${eslintConfig}/index.mjs`),
     'utf8',
   )
 }
@@ -44,8 +44,8 @@ async function eslint() {
   copyFiles(lintChoice)
 
   addScripts({
-    'code-config:lint': "eslint '**/*.js'",
-    'code-config:lint-fix': "eslint '**/*.js' --fix",
+    'code-config:lint': 'eslint',
+    'code-config:lint-fix': 'eslint --fix',
   })
 
   if (hookChoice) {
