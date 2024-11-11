@@ -22,6 +22,7 @@
     "lint": "eslint",
     "test": "concurrently -c 'cyan,yellow,green' npm:test:*",
     "fix": "concurrently -c 'cyan,yellow,green' 'npm:test:* -- {1}' -P -- --fix",
+    "test:jest": "jest",
     "test:eslint": "node ./test/selfeslint.mjs",
     "test:stylelint": "node ./test/selfstylelint.mjs"
   },
@@ -34,6 +35,7 @@
     "eslint-plugin-prettier": "^5.2.1",
     "eslint-plugin-react": "^7.37.2",
     "globals": "^15.12.0",
+    "jest": "^29.7.0",
     "prettier": "^3.3.3",
     "stylelint": "^16.10.0",
     "stylelint-config-standard": "^36.0.1",
