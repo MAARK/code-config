@@ -3,9 +3,16 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
-## 2.2.0
+## 3.0.0
 
-_2024-11-05_
+_2024-11-12_
+
+Breaks backward compatibility with the previous version.
+
+### Added
+
+* Jest configuration
+* Start writing unit tests
 
 ### Updated
 
