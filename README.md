@@ -2,7 +2,7 @@
 
 [![badge][badge]][npm-repo] [![badge-ci][badge-ci]][CircleCI]
 
-[badge]: https://img.shields.io/badge/%40maarkllc%2Fcode--config-v2.1.0-blue
+[badge]: https://img.shields.io/badge/%40maarkllc%2Fcode--config-v3.0.0-blue
 [npm-repo]: https://www.npmjs.com/package/@maarkllc/code-config
 
 [badge-ci]: https://circleci.com/gh/MAARK/code-config.svg?style=shield
@@ -103,9 +103,8 @@ graph TD
 
 ### ESLint
 
-- `js/base`: It extends from [Airbnb] base configuration.
-- `js/react`: It extends from `js/base` and Airbnb full
-  configuration and hooks rules.
+- `js/base`: It has the basic configuration for JS projects.
+- `js/react`: It extends from `js/base` and adds the React plugin and rules which includes hooks.
 
 ### Stylelint
 
@@ -128,7 +127,6 @@ For more information please refer to the [documentation].
 [ESLint]: https://eslint.org/
 [Prettier]: https://prettier.io/
 [Stylelint]: https://stylelint.io/
-[Airbnb]: https://github.com/airbnb/javascript
 [GitHooks]: https://git-scm.com/book/en/v2/Customizing-Git-Git-Hooks
 
 [diagram]: https://mermaid.live/edit#pako:eNp1klFrwjAUhf9Kia_KdPiyPAzUVmV0e6kwWOrDbXvVzjQtSSor4n9fmqzKZpeHkHvOd5MTuGeSlhkSSvYSqoO38WPhmaXqxAkh7lFkTmxXOGGzE-QcEo5bSil0hTcaPXvhI3srtScRsmbrmq7dbp-xIApzoe975-zFCFEq8-q36xrnFlqwT_WQgMIeYmEJvyVMgFT_ixjgVP9VQOxrDtKpfqcK_NKx-IluxYBtmgqVi9lZSxbphiPv_diKLaKoJ8zSumsW9dsra6fK_ffeX1tf9QMOecekgvTYlSkHpXzcebd8SsvyiHQwnk8n42C4yzmng6epP5kHZEgKlAXkmZmOc3tDTPQBC4wJNcf2zZjE4mI4qHUZNSIlVMsah6SuMtDo52BmqCB0B1wZtQLxUZa32lFBlutSXkW05aubSTual2_O6dT3

@@ -1,5 +1,5 @@
-const fs = require('fs')
-const path = require('path')
+import fs from 'fs'
+import path from 'path'
 
 function flatten(lists) {
   return lists.reduce((a, b) => a.concat(b), [])
@@ -12,13 +12,9 @@ function getDirectories(srcPath) {
     .filter((filePath) => fs.statSync(filePath).isDirectory())
 }
 
-function getDirectoriesRecursive(srcPath) {
+export function getDirectoriesRecursive(srcPath) {
   return [
     srcPath,
-    ...flatten(getDirectories(srcPath).map(getDirectoriesRecursive))
+    ...flatten(getDirectories(srcPath).map(getDirectoriesRecursive)),
   ]
-}
-
-module.exports = {
-  getDirectoriesRecursive
 }

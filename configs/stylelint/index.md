@@ -8,11 +8,13 @@ example we're installing `scss/base`.
 ```bash
 npm i --save-dev \
   @maarkllc/code-config \
-  stylelint@^15.2.0 \
-  stylelint-config-standard-scss@^7.0.1
+  stylelint@^16.10.0 \
+  stylelint-config-standard@^36.0.1 \
+  stylelint-config-standard-scss@^13.1.0
 ```
 
-> ⚠️ Please refer to `info.json` inside each configuration's folder to know
+> [!IMPORTANT]
+> Please refer to `info.json` inside each configuration's folder to know
 > which dependencies are required for the one you choose to install.
 > e.g. [`scss/base/info.json`](./scss/base/info.json)
 

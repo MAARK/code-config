@@ -5,5 +5,5 @@ module.exports = {
   extends: ['./node_modules/@maarkllc/code-config/configs/stylelint/{config}'],
   rules: {
     // Overwrite rules here
-  }
+  },
 }

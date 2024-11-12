@@ -4,7 +4,7 @@ import { actionText, dim } from 'src/utils/log-style'
 import {
   askHookChoices,
   getHookChoices,
-  askSmartLinting
+  askSmartLinting,
 } from 'src/utils/prompts'
 import { checkCodeConfigScripts } from 'src/utils/npm'
 
@@ -28,7 +28,7 @@ function copyFiles(options) {
     console.log(
       { gitPath },
       !fs.existsSync(gitPath),
-      folderStep < maxFolderStep
+      folderStep < maxFolderStep,
     )
     gitPath = `../${gitPath}`
     folderStep++
@@ -40,7 +40,7 @@ function copyFiles(options) {
     templates = path.join(__dirname, '../src/app/githook/templates/smart')
     hookPath = path.join(
       __dirname,
-      '../src/app/githook/templates/pre-push-smart'
+      '../src/app/githook/templates/pre-push-smart',
     )
   } else if (checkCodeConfigScripts()) {
     console.log('code-config scripts detected')
@@ -101,19 +101,19 @@ async function githook(defaultOption) {
   if (!haveOptions(defaultOption)) {
     const folderPath = path.join(
       __dirname,
-      '../src/app/githook/templates/code-config'
+      '../src/app/githook/templates/code-config',
     )
     const hookChoices = await getHookChoices({ folderPath })
     const selectedHookChoices = await askHookChoices(hookChoices)
 
     options = {
       hookChoice: selectedHookChoices.hookChoice,
-      smartLinting: smartLinting.smartLinting
+      smartLinting: smartLinting.smartLinting,
     }
   } else {
     options = {
       hookChoice: defaultOption,
-      smartLinting: smartLinting.smartLinting
+      smartLinting: smartLinting.smartLinting,
     }
   }
 
@@ -123,8 +123,8 @@ async function githook(defaultOption) {
 export function githookDoc() {
   console.log(
     `\n\t${actionText(
-      'githook'
-    )}\t\t- Load GitHook configuration following Maark's guidelines`
+      'githook',
+    )}\t\t- Load GitHook configuration following Maark's guidelines`,
   )
   console.log(`\n\t\t\t  ${dim('code-config githook')}`)
 }
@@ -133,7 +133,7 @@ export const githookPrompt = {
   name: 'githook',
   message: '🪝  Create githook file',
   hint: 'code-config githook',
-  action: githook
+  action: githook,
 }
 
 export default githook
