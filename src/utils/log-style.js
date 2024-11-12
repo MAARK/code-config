@@ -21,7 +21,7 @@ const STYLES = {
   bgBlue: '\x1B[44m',
   bgMagenta: '\x1B[45m',
   bgCyan: '\x1B[46m',
-  bgWhite: '\x1B[47m'
+  bgWhite: '\x1B[47m',
 }
 
 function applyStyle(text, style) {

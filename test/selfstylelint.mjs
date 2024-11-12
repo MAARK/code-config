@@ -1,7 +1,7 @@
-const fs = require('fs')
-const path = require('path')
-const stylelint = require('stylelint')
-const { getDirectoriesRecursive } = require('./utils/file-system')
+import fs from 'fs'
+import path from 'path'
+import stylelint from 'stylelint'
+import { getDirectoriesRecursive } from './utils/file-system.mjs'
 
 const [, , option] = process.argv
 const fix = option === '--fix'
@@ -13,26 +13,26 @@ function getAbsolutePath(stylelintPath) {
 }
 
 function getConfigFile(stylelintPath) {
-  return path.join(getAbsolutePath(stylelintPath), 'index.js')
+  return path.join(getAbsolutePath(stylelintPath), 'index.mjs')
 }
 
 async function lint(stylelintPath) {
-  const { output } = await stylelint.lint({
+  const { report } = await stylelint.lint({
     fix,
     formatter: 'string',
     configFile: getConfigFile(stylelintPath),
     cwd: getAbsolutePath(stylelintPath),
-    files: [DEFAULT_PATTERNS]
+    files: [DEFAULT_PATTERNS],
   })
 
-  if (output) {
-    console.log(output)
+  if (report) {
+    console.log(report)
   }
 }
 
 function lintAll() {
   const stylelintDirs = getDirectoriesRecursive(STYLELINT_CONFIGS).filter(
-    (stylelintPath) => fs.existsSync(getConfigFile(stylelintPath))
+    (stylelintPath) => fs.existsSync(getConfigFile(stylelintPath)),
   )
   return Promise.all(stylelintDirs.map((stylelintPath) => lint(stylelintPath)))
 }

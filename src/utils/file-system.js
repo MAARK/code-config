@@ -5,6 +5,8 @@ export function readFile({ filepath }) {
   try {
     return fs.readFileSync(filepath, 'utf8')
   } catch (error) {
+    console.error('Error in readFile: ', error)
+
     return false
   }
 }
@@ -13,6 +15,8 @@ export function readJsonFile({ filepath }) {
   try {
     return JSON.parse(readFile({ filepath }))
   } catch (error) {
+    console.error('Error in readJsonFile: ', error)
+
     return false
   }
 }
@@ -21,6 +25,8 @@ export function writeJsonFile({ filepath, data }) {
   try {
     fs.writeFileSync(filepath, JSON.stringify(data, null, 2))
   } catch (error) {
+    console.error('Error in writeJsonFile: ', error)
+
     return false
   }
 

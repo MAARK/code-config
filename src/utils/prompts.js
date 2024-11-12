@@ -11,8 +11,8 @@ export function askCoreCommands(choices) {
       type: 'autocomplete',
       name: 'coreCommands',
       message: 'What do you want to do?',
-      choices: [...choices]
-    }
+      choices: [...choices],
+    },
   ])
 }
 
@@ -39,8 +39,8 @@ export function askLintChoices(choices) {
       type: 'autocomplete',
       name: 'lintChoice',
       message: 'Which configuration do you want to install?',
-      choices: [...choices]
-    }
+      choices: [...choices],
+    },
   ])
 }
 
@@ -49,8 +49,8 @@ export function askHookConfirmation() {
     {
       type: 'confirm',
       name: 'hookChoice',
-      message: 'Do you want to add Git hook configuration?'
-    }
+      message: 'Do you want to add Git hook configuration?',
+    },
   ])
 }
 
@@ -63,8 +63,8 @@ export function askSmartLinting() {
     {
       type: 'confirm',
       name: 'smartLinting',
-      message: 'Do you want to use smart linting?'
-    }
+      message: 'Do you want to use smart linting?',
+    },
   ])
 }
 
@@ -78,7 +78,7 @@ export function askHookChoices(choices) {
       message:
         'Which configuration do you want to install? (select multiple with spacebar)',
       multiple: true,
-      choices
-    }
+      choices,
+    },
   ])
 }

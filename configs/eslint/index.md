@@ -7,47 +7,48 @@ example we're installing `js/base`.
 
 ```bash
 npm i --save-dev \
+  @eslint/js@9.14.0 \
   @maarkllc/code-config \
-  eslint@^8.35.0 \
-  eslint-config-airbnb-base@^15.0.0 \
-  eslint-config-prettier@^8.7.0 \
-  eslint-plugin-prettier@^4.2.1 \
-  prettier@^2.8.4 \
-  stylelint@^15.2.0 \
-  stylelint-config-standard-scss@^7.0.1
+  eslint@^9.14.0 \
+  eslint-config-prettier@^9.1.0 \
+  eslint-plugin-prettier@^5.2.1 \
+  globals@^15.12.0 \
+  prettier@^3.3.3
 ```
 
-> ⚠️ Please refer to `info.json` inside each configuration's folder to know
+> [!IMPORTANT]
+> Please refer to `info.json` inside each configuration's folder to know
 > which dependencies are required for the one you choose to install.
 > e.g. [`js/base/info.json`](./js/base/info.json)
 
 ### 2. Configure [ESLint]
 
-Create a `.eslintrc.js` file in your project root directory and extend the
+Create a `eslint.config.mjs` file in your project root directory and extend the
 configuration.
 
 ```javascript
-module.exports = {
-  extends: ['./node_modules/@maarkllc/code-config/configs/eslint/js/base']
-}
-```
+import ESLintConfig from './node_modules/@maarkllc/code-config/configs/eslint/js/base/index.mjs'
 
-Or, it can also be extended using `require`.
+export default [
+  ...ESLintConfig,
+  {
+    rules: {
+      // Add custom rules here
+    },
+  },
+]
 
-```javascript
-const eslintConfig = require('@maarkllc/code-config/configs/eslint/js/base')
-
-module.exports = eslintConfig
 ```
 
 ### 3. Configure [Prettier]
 
-Create a `.prettierrc.js` file in your project root directory.
+Create a `prettier.config.mjs` file in your project root directory.
 
 ```javascript
-const prettierConfig = require('@maarkllc/code-config/configs/eslint/js/base/prettier')
+import prettierConfig from '@maarkllc/code-config/configs/eslint/js/base/prettier.mjs'
 
-module.exports = prettierConfig
+export default prettierConfig
+
 ```
 
 [ESLint]: https://eslint.org/

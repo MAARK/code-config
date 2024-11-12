@@ -3,6 +3,29 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## 3.0.0
+
+_2024-11-12_
+
+Breaks backward compatibility with the previous version.
+
+### Added
+
+* Jest configuration
+* Start writing unit tests
+
+### Updated
+
+* Dependencies upgraded
+* ESlint upgraded to version 9
+* Stylelint upgraded to version 16
+* Moved from CommonJS to ECMAScript modules as required by the upgrades
+* README files
+
+### Removed
+
+* Airbnb ESLint configuration as it's no longer supported by ESLint 9
+
 ## 2.1.0
 
 _2023-11-05_
