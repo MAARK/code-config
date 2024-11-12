@@ -1,4 +1,3 @@
-import globals from 'globals'
 import pluginReact from 'eslint-plugin-react'
 import baseConfig from '../base/index.mjs'
 
