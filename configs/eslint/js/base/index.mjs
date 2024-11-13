@@ -18,4 +18,9 @@ export default [
   pluginJs.configs.recommended,
   PrettierRecommended,
   PrettierConfig,
+  {
+    rules: {
+      'require-await': 'error',
+    },
+  },
 ]

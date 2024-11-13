@@ -85,9 +85,8 @@ graph TD
     A[ESLint]:::available --> B[JavaScript]:::available
     B --> C[js/base]:::available
     C --> D[js/react]:::available
+    C --> js/next:::available
     C --> js/vue
-    C --> js/angular
-    D --> js/next
 
     A --> E[Typescript]
 

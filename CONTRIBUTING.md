@@ -75,7 +75,7 @@ gitGraph
   commit id: "8" type: HIGHLIGHT tag: "v1.0.0"
   checkout main
   merge release/v1.0.0
-  checkout release/v1.0.0 # it should be checkout v1.0.0 but mermaid does not support it
+  checkout release/v1.0.0 %% it should be checkout v1.0.0 but mermaid does not support it
   branch hotfix
   commit id: "9"
   commit id: "10" type: HIGHLIGHT tag: "v1.0.1"
