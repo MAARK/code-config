@@ -1,7 +1,8 @@
 'use server'
 
 export async function getProducts() {
-  const products = await fetch('https://api.example.com/products')
+  const response = await fetch('https://api.example.com/products')
+  const products = await response.json()
 
   return products.map((product) => ({
     id: product.id,
