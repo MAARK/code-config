@@ -2,7 +2,7 @@
 
 [![badge][badge]][npm-repo] [![badge-ci][badge-ci]][CircleCI]
 
-[badge]: https://img.shields.io/badge/%40maarkllc%2Fcode--config-v3.0.0-blue
+[badge]: https://img.shields.io/badge/%40maarkllc%2Fcode--config-v3.0.1-blue
 [npm-repo]: https://www.npmjs.com/package/@maarkllc/code-config
 
 [badge-ci]: https://circleci.com/gh/MAARK/code-config.svg?style=shield
