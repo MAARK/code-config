@@ -13,7 +13,7 @@ function getAbsolutePath(stylelintPath) {
 }
 
 function getConfigFile(stylelintPath) {
-  return path.join(getAbsolutePath(stylelintPath), 'index.mjs')
+  return path.join(getAbsolutePath(stylelintPath), 'index.cjs')
 }
 
 async function lint(stylelintPath) {

@@ -1,6 +1,6 @@
-export default {
+module.exports = {
   extends: ['stylelint-config-standard'],
   rules: {
-    // override rules here
+    // Overwrite rules here
   },
 }

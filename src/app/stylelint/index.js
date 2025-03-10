@@ -20,7 +20,7 @@ function copyFiles(eslintConfig) {
 
   fs.writeFileSync(
     '.stylelintrc.js',
-    stylelintContent.replace('{config}', eslintConfig),
+    stylelintContent.replace('{config}', `${eslintConfig}/index.cjs`),
     'utf8',
   )
 }
