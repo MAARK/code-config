@@ -10,7 +10,7 @@ jest.mock('child_process', () => ({
   })),
 }))
 
-describe('Testing npm utility file', () => {
+describe('Testing npm utilities', () => {
   it('Should run command', () => {
     const promise = runCommand({ command: 'echo test' })
 

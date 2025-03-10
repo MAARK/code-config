@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## 3.0.1
+
+_2024-12-09_
+
+### Added
+
+* Next.js configuration
+
+### Updated
+
+* Readme diagram
+* Fixed mermaid issues in CONTRIBUTING file
+
 ## 3.0.0
 
 _2024-11-12_
